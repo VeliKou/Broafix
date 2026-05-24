@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Broafix</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      background: #2563eb;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      transition: 0.2s;
+    }
+
+    nav a:hover {
+      background: #1e40af;
+    }
+
+    main {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .logo-placeholder {
+      font-size: 40px;
+      font-weight: bold;
+      color: #333;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Broafix</h1>
+</header>
+
+<nav>
+  autovuokraus-kuopio.htmlAutovuokraus Kuopio</a>
+  <a href="autovuokraus-karjalohja.html">Autovuokraus Karjalohja</a>
+  <a href="autokorjaus-kuopio.html">Autokorjaus Kuopio</a>
+  <a href="autokorjaus-karjalohja.html">Autokorjaus Karjalohja</a>
+</nav>
+
+<main>
+  <div class="logo-placeholder">LOGO TULOSSA</div>
+</main>
+
+</body>
+</html>
+
+
+<!-- ESIMERKKI ALASIVUSTA: kopioi tämä uudeksi tiedostoksi -->
+
+<!-- tallenna nimellä esim: autovuokraus-kuopio.html -->
+
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autovuokraus Kuopio - Broafix</title>
+  <style>
+    body { font-family: Arial; padding: 40px; }
+    a { display: inline-block; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<h1>Autovuokraus Kuopio</h1>
+<p>Sisältö tulossa...</p>
+
+<a href="index.html">← Takaisin etusivulle</a>
+
+</body>
+</html>
