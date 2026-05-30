@@ -279,7 +279,6 @@
           <h3>Vuokrauskohteen käyttö</h3>
           <ol>
             <li>Vuokraaja on velvollinen huolehtimaan ajoneuvosta yhtä hyvin kuin huolellinen henkilö omastaan sekä noudattamaan ajaessaan erityistä huolellisuutta ja varovaisuutta. Vuokraaja sitoutuu käyttämään ajoneuvoa vain sille tarkoitetulla tavanomaisella tavalla.</li>
-            <li>Vuokraajan on vuokra-aikana huolehdittava ajoneuvon kunnon normaalista tarkkailusta, kuten rengaspaineista sekä öljy- ja muiden nesteiden riittävyydestä ja tarvittaessa täytöstä.</li>
             <li>Vuokraaja sitoutuu kuljettamaan ajoneuvoa itse. Hän saa luovuttaa ajoneuvon toiselle tai toisen kuljetettavaksi vain, jos se on tämän sopimuksen erityisehdoissa nimenomaisesti sallittu. Ajoneuvon kuljettajalla tulee olla voimassa oleva riittävä ajo-oikeus. Lisäksi hänen tulee täyttää erityisehdoissa mahdollisesti edellytetyt vaatimukset koskien ajokokemusta ja/tai ikää. Ajoneuvon jälleenvuokraus tai luovuttaminen kolmannelle osapuolelle on kielletty.</li>
             <li>Ajoneuvoa saa kuljettaa ainoastaan virallisilla teillä. Ajoneuvon käyttäminen lainvastaisiin tarkoituksiin, hinaukseen, kilpailuihin tai niiden harjoituksiin, ajo-opetukseen sekä jäällä ajamiseen virallisesti merkittyjen jääteiden ulkopuolella on kielletty.</li>
             <li>Ajoneuvon jäädessä hetkeksikin pysäköidyksi, se on ehdottomasti lukittava.</li>
@@ -333,34 +332,35 @@
 
   </div>
 
-  <script>
-    function laskeHinta() {
-      const alkuPvm = document.getElementById("start").value;
-      const loppuPvm = document.getElementById("end").value;
-      const alkuAika = document.getElementById("start_time").value;
-      const loppuAika = document.getElementById("end_time").value;
+<script>
+  function laskeHinta() {
+    const alkuPvm = document.getElementById("start").value;
+    const loppuPvm = document.getElementById("end").value;
+    const alkuAika = document.getElementById("start_time").value;
+    const loppuAika = document.getElementById("end_time").value;
 
-      if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) {
-        document.getElementById("tulos").innerText = "";
-        return;
-      }
-
-      const alku = new Date(alkuPvm + "T" + alkuAika);
-      const loppu = new Date(loppuPvm + "T" + loppuAika);
-      const ero = loppu - alku;
-
-      if (ero <= 0) {
-        document.getElementById("tulos").innerText = "Tarkista päivämäärät ja kellonajat";
-        return;
-      }
-
-      const paivat = Math.ceil(ero / (1000 * 60 * 60 * 24));
-      const hinta = paivat * 30;
-
-      document.getElementById("tulos").innerText =
-        "Vuokra-aika: " + paivat + " päivää | Hinta: " + hinta + " €";
+    if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) {
+      document.getElementById("tulos").innerText = "";
+      return;
     }
-  </script>
+
+    const alku = new Date(alkuPvm + "T" + alkuAika);
+    const loppu = new Date(loppuPvm + "T" + loppuAika);
+    const ero = loppu - alku;
+
+    if (ero <= 0) {
+      document.getElementById("tulos").innerText = "Tarkista päivämäärät ja kellonajat";
+      return;
+    }
+
+    const paivat = Math.ceil(ero / (1000 * 60 * 60 * 24));
+    const alennus = Math.floor(paivat / 2) * 5;
+    const hinta = (paivat * 30) - alennus;
+
+    document.getElementById("tulos").innerText =
+      "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " € | Hinta: " + hinta + " €";
+  }
+</script>
 
 </body>
 </html>
