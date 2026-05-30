@@ -1,178 +1,259 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pakettiauton vuokraus - Volkswagen Transporter T4, 1999 - Karjalohja</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pakettiauton vuokraus - Volkswagen Transporter 1999 - Karjalohja</title>
 
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f5f5f5;
-}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #222;
+    }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-}
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
 
-h1, h2 {
-  text-align: center;
-}
+    h1, h2 {
+      text-align: center;
+      margin: 10px 0;
+    }
 
-.card {
-  background: white;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
 
-.price {
-  font-size: 24px;
-  font-weight: bold;
-  color: #2c7a2c;
-  text-align: center;
-}
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #2c7a2c;
+      text-align: center;
+      margin: 0 0 10px 0;
+    }
 
-input, textarea, button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+    input,
+    textarea,
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
 
-button {
-  background-color: #2c7a2c;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
 
-button:hover {
-  background-color: #256b25;
-}
+    button {
+      background-color: #2c7a2c;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
 
-.result {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #2c7a2c;
-}
+    button:hover {
+      background-color: #256b25;
+    }
 
-.muted {
-  font-size: 13px;
-}
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #2c7a2c;
+    }
 
-.checkbox-row {
-  margin-top: 12px;
-}
+    .muted {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.4;
+    }
 
-/* ✅ Etusivu nappi */
-.back-top {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background: #2c7a2c;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-weight: bold;
-}
+    .top-buttons {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
 
-/* ✅ Vuokrausehdot */
-.terms {
-  font-size: 13px;
-  line-height: 1.5;
-}
-</style>
+    .top-button {
+      display: inline-block;
+      background: #2c7a2c;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      font-size: 14px;
+    }
+
+    .top-button:hover {
+      background: #256b25;
+    }
+
+    .checkbox-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 12px;
+      padding: 10px;
+      border: 1px solid #e6e6e6;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: auto;
+      margin-top: 3px;
+      transform: scale(1.1);
+    }
+
+    .checkbox-row label {
+      width: 100%;
+      font-size: 13px;
+      line-height: 1.4;
+      cursor: pointer;
+    }
+
+    .checkbox-row a {
+      color: #2c7a2c;
+      text-decoration: underline;
+    }
+
+    /* Vuokrausehdot pienemmällä */
+    .terms {
+      font-size: 11px;
+      line-height: 1.45;
+      color: #333;
+    }
+
+    .terms h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .terms h3 {
+      font-size: 12px;
+      margin: 14px 0 6px 0;
+    }
+
+    .terms ol {
+      padding-left: 18px;
+      margin: 8px 0;
+    }
+
+    .terms ol ol {
+      padding-left: 18px;
+      margin: 6px 0;
+    }
+
+    .terms li {
+      margin: 6px 0;
+    }
+
+    @media (max-width: 640px) {
+      .top-buttons {
+        left: 15px;
+        right: 15px;
+        justify-content: space-between;
+      }
+
+      .top-button {
+        font-size: 13px;
+        padding: 9px 12px;
+      }
+
+      .container {
+        padding-top: 70px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ✅ KORJATTU LINKKI -->
-<a href="index.html" class="back-top">🏠 Etusivulle</a>
+  <div class="top-buttons">
+    <a href="index.html" class="top-button">🏠 Etusivulle</a>
+    <a href="javascript:history.back()" class="top-button">← Edellinen sivu</a>
+  </div>
 
-<div class="container">
+  <div class="container">
 
-<h1>Volkswagen Golf 1.6 TDI, Diesel, 2011</h1>
+    <h1>Pakettiauto Volkswagen Transporter 1999</h1>
 
-<div class="card">
-  <p class="price">30 € / vrk</p>
-  <p style="text-align:center;">
-    Luotettava ja taloudellinen auto arkeen ja matkalle.
-    Sijaitsee Kuopiossa Inkilämäellä.
-  </p>
-</div>
+    <div class="card">
+      <p class="price">30 € / vrk</p>
+      <p style="text-align:center;">
+        Tilava ja käytännöllinen pakettiauto kuljetuksiin ja muuttoihin.<br>
+        Sijaitsee Karjalohjalla.
+      </p>
+    </div>
 
-<div class="card">
-<h2>Tee varaus</h2>
+    <div class="card">
+      <h2>Tee varaus</h2>
 
-<!-- ✅ KORJATTU FORM -->
-<form action="https://formspree.io/f/xykveewp" method="POST">
+      <form action="https://formspree.io/f/xykveewp" method="POST">
+        <label for="name">Nimi</label>
+        <input type="text" id="name" name="name" required>
 
-<label>Nimi</label>
-<input type="text" name="name" required>
+        <label for="phone">Puhelin</label>
+        <input type="text" id="phone" name="phone" required>
 
-<label>Puhelin</label>
-<input type="text" name="phone" required>
+        <label for="email">Sähköposti</label>
+        <input type="email" id="email" name="email" required>
 
-<label>Sähköposti</label>
-<input type="email" name="email" required>
+        <label for="start">Aloituspäivä</label>
+        <input type="date" id="start" name="start_date" onchange="laskeHinta()" required>
 
-<label>Aloituspäivä</label>
-<input type="date" id="start" onchange="laskeHinta()" required>
+        <label for="start_time">Luovutusaika</label>
+        <input type="time" id="start_time" name="start_time" onchange="laskeHinta()" required>
 
-<label>Luovutusaika</label>
-<input type="time" id="start_time" onchange="laskeHinta()" required>
+        <label for="end">Lopetuspäivä</label>
+        <input type="date" id="end" name="end_date" onchange="laskeHinta()" required>
 
-<label>Lopetuspäivä</label>
-<input type="date" id="end" onchange="laskeHinta()" required>
+        <label for="end_time">Palautusaika</label>
+        <input type="time" id="end_time" name="end_time" onchange="laskeHinta()" required>
 
-<label>Palautusaika</label>
-<input type="time" id="end_time" onchange="laskeHinta()" required>
+        <div class="result" id="tulos"></div>
 
-<div class="result" id="tulos"></div>
+        <label for="message">Lisätiedot</label>
+        <textarea id="message" name="message" placeholder="Esim. käyttötarkoitus, noutoaika tai lisätiedot"></textarea>
 
-<label>Lisätiedot</label>
-<textarea name="message"></textarea>
+        <input type="hidden" name="_subject" value="Uusi varauspyyntö - Volkswagen Transporter 1999">
 
-<div class="checkbox-row">
-  <input type="checkbox" required>
-  Hyväksyn <a href="#vuokrausehdot">vuokrausehdot</a>
-</div>
+        <div class="checkbox-row">
+          <input type="checkbox" id="termsAccepted" name="terms_accepted" value="Kyllä" required>
+          <label for="termsAccepted">
+            Olen lukenut ja hyväksyn <a href="#vuokrausehdot">vuokrausehdot</a>.
+          </label>
+        </div>
 
-<button type="submit">Lähetä varauspyyntö</button>
-</form>
+        <button type="submit">Lähetä varauspyyntö</button>
+      </form>
 
-<p class="muted">
-Varaus vahvistetaan erikseen. Maksu ennen luovutusta.
-</p>
+      <p class="muted">
+        Varaus vahvistetaan erikseen. Maksu ennen luovutusta.
+      </p>
+    </div>
 
-</div>
-
-<!-- ✅ LYHENNETYT VUOKRAUSEHDOT -->
-<div class="card terms" id="vuokrausehdot">
-<h2>Vuokrausehdot (lyhyesti)</h2>
-
-<ol>
-<li><b>Varaus:</b> Varaus vahvistuu maksun jälkeen.</li>
-<li><b>Käyttö:</b> Vain normaali ajo, ei tupakointia tai rikkomuksia.</li>
-<li><b>Omavastuu:</b> max 500 € vahingoista.</li>
-<li><b>Polttoaine:</b> Palauta samalla tasolla.</li>
-<li><b>Myöhästyminen:</b> 10 € / tunti.</li>
-<li><b>Sakot:</b> Vuokraaja maksaa kaikki sakot.</li>
-<li><b>Peruutus:</b> Alle 6h ennen → 20 €.</li>
-<li><b>Tiedot:</b> Käytetään vain vuokraukseen.</li>
-  
-</ol>
-
-</div>
-
- <!-- ✅ VUOKRAUSEHDOT LOPPUUN PIENELLÄ PRÄNTILLÄ -->
+    <!-- VUOKRAUSEHDOT -->
     <div class="card terms" id="vuokrausehdot">
       <h2>VUOKRAUSEHDOT</h2>
 
@@ -277,38 +358,34 @@ Varaus vahvistetaan erikseen. Maksu ennen luovutusta.
 
   </div>
 
-  
-</div>
+  <script>
+    function laskeHinta() {
+      const alkuPvm = document.getElementById("start").value;
+      const loppuPvm = document.getElementById("end").value;
+      const alkuAika = document.getElementById("start_time").value;
+      const loppuAika = document.getElementById("end_time").value;
 
-<script>
-function laskeHinta() {
-  const alkuPvm = document.getElementById("start").value;
-  const loppuPvm = document.getElementById("end").value;
-  const alkuAika = document.getElementById("start_time").value;
-  const loppuAika = document.getElementById("end_time").value;
+      if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) {
+        document.getElementById("tulos").innerText = "";
+        return;
+      }
 
-  if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) {
-    document.getElementById("tulos").innerText = "";
-    return;
-  }
+      const alku = new Date(alkuPvm + "T" + alkuAika);
+      const loppu = new Date(loppuPvm + "T" + loppuAika);
+      const ero = loppu - alku;
 
-  const alku = new Date(alkuPvm + "T" + alkuAika);
-  const loppu = new Date(loppuPvm + "T" + loppuAika);
+      if (ero <= 0) {
+        document.getElementById("tulos").innerText = "Tarkista päivämäärät ja kellonajat";
+        return;
+      }
 
-  const ero = loppu - alku;
+      const paivat = Math.ceil(ero / (1000 * 60 * 60 * 24));
+      const hinta = paivat * 30;
 
-  if (ero <= 0) {
-    document.getElementById("tulos").innerText = "Tarkista päivämäärät";
-    return;
-  }
-
-  const paivat = Math.ceil(ero / (1000 * 60 * 60 * 24));
-  const hinta = paivat * 30;
-
-  document.getElementById("tulos").innerText =
-    "Vuokra-aika: " + paivat + " päivää | Hinta: " + hinta + " €";
-}
-</script>
+      document.getElementById("tulos").innerText =
+        "Vuokra-aika: " + paivat + " päivää | Hinta: " + hinta + " €";
+    }
+  </script>
 
 </body>
 </html>
