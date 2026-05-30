@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fi">
 <head>
@@ -5,96 +6,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Broafix</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f4f4f4;
+      color: #222;
     }
 
-    header {
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 260px;
       background: #1f2937;
       color: white;
-      padding: 20px;
-      text-align: center;
+      padding: 30px 20px;
     }
 
-    nav {
+    .sidebar h1 {
+      font-size: 28px;
+      margin: 0 0 30px 0;
+      text-align: left;
+    }
+
+    .nav {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      flex-direction: column;
       gap: 10px;
-      padding: 20px;
     }
 
-    nav a {
+    .nav a {
       text-decoration: none;
       background: #2563eb;
       color: white;
-      padding: 12px 20px;
-      border-radius: 10px;
-      transition: 0.2s;
+      padding: 12px 14px;
+      border-radius: 8px;
+      transition: background 0.2s ease;
     }
 
-    nav a:hover {
+    .nav a:hover {
       background: #1e40af;
     }
 
-    main {
+    .content {
+      flex: 1;
+      padding: 60px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero {
+      background: white;
+      width: 100%;
+      max-width: 700px;
+      padding: 50px 30px;
+      border-radius: 14px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
       text-align: center;
-      padding: 60px 20px;
+    }
+
+    .hero h2 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 30px;
     }
 
     .logo-placeholder {
-      font-size: 40px;
+      font-size: 38px;
       font-weight: bold;
-      color: #333;
-      margin-top: 100px;
+      color: #888;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+      }
+
+      .sidebar h1 {
+        text-align: center;
+      }
+
+      .content {
+        padding: 30px 15px;
+      }
+
+      .hero {
+        padding: 30px 20px;
+      }
+
+      .hero h2 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Broafix</h1>
-</header>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>Broafix</h1>
 
-<nav>
-  autovuokraus-kuopio.htmlAutovuokraus Kuopio</a>
-  <a href="autovuokraus-karjalohja.html">Autovuokraus Karjalohja</a>
-  <a href="autokorjaus-kuopio.html">Autokorjaus Kuopio</a>
-  <a href="autokorjaus-karjalohja.html">Autokorjaus Karjalohja</a>
-  <a href="GOLF.html">Autovuokraus_testi_golf</a>
-</nav>
+      <nav class="nav">
+        <a href="autovuokraus-kuopio.html">Autovuokraus Kuopio</a>
+        <a href="autovuokraus-karjalohja.html">Autovuokraus Karjalohja</a>
+        <a href="autokorjaus-kuopio.html">Autokorjaus Kuopio</a>
+        <a href="autokorjaus-karjalohja.html">Autokorjaus Karjalohja</a>
+        <a href="GOLF.html">Autovuokraus testi Golf</a>
+      </nav>
+    </aside>
 
-<main>
-  <div class="logo-placeholder">LOGO TULOSSA</div>
-</main>
-
-</body>
-</html>
-
-
-<!-- ESIMERKKI ALASIVUSTA: kopioi tämä uudeksi tiedostoksi -->
-
-<!-- tallenna nimellä esim: autovuokraus-kuopio.html -->
-
-<!DOCTYPE html>
-<html lang="fi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autovuokraus Kuopio - Broafix</title>
-  <style>
-    body { font-family: Arial; padding: 40px; }
-    a { display: inline-block; margin-top: 20px; }
-  </style>
-</head>
-<body>
-
-<h1>Autovuokraus Kuopio</h1>
-<p>Sisältö tulossa...</p>
-
-<a href="index.html">← Takaisin etusivulle</a>
+    <main class="content">
+      <section class="hero">
+        <h2>Tervetuloa Broafix-sivustolle</h2>
+        <p>Valitse palvelu vasemman reunan valikosta.</p>
+        <div class="logo-placeholder">LOGO TULOSSA</div>
+      </section>
+    </main>
+  </div>
 
 </body>
 </html>
