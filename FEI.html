@@ -73,6 +73,7 @@
       margin-top: 10px;
       font-weight: bold;
       color: #2c7a2c;
+      line-height: 1.5;
     }
 
     .muted {
@@ -137,7 +138,6 @@
       text-decoration: underline;
     }
 
-    /* Vuokrausehdot pienemmällä */
     .terms {
       font-size: 11px;
       line-height: 1.45;
@@ -253,7 +253,6 @@
       </p>
     </div>
 
-    <!-- VUOKRAUSEHDOT -->
     <div class="card terms" id="vuokrausehdot">
       <h2>VUOKRAUSEHDOT</h2>
 
@@ -262,9 +261,9 @@
           <h3>Vuokrasopimuksen syntyminen ja vuokraushinnan maksaminen</h3>
           <ol>
             <li>
-            Tämä vuokrasopimus Vuokraajan ja Vuokranantajan välille syntyy ja tulee osapuolia oikeudellisesti sitovaksi, kun varaus on vahvistettu ja sovittu maksu on maksettu.
+              Tämä vuokrasopimus Vuokraajan ja Vuokranantajan välille syntyy ja tulee osapuolia oikeudellisesti sitovaksi, kun varaus on vahvistettu ja sovittu maksu on maksettu.
             </li>
-            </ol>
+          </ol>
         </li>
 
         <li>
@@ -301,7 +300,7 @@
         <li>
           <h3>Vuokraajan vastuu ja velvollisuudet</h3>
           <ol>
-            <li>Vuokraaja on velvollinen suorittamaan Vuokranantajalle vuokrahinnan lisäksi mahdolliset sopimuksen mukaiset lisämaksut. </li>
+            <li>Vuokraaja on velvollinen suorittamaan Vuokranantajalle vuokrahinnan lisäksi mahdolliset sopimuksen mukaiset lisämaksut.</li>
             <li>Vuokraajan on välittömästi ilmoitettava Vuokranantajalle ajoneuvossa ilmenneestä virheestä tai ajoneuvoa kohdanneesta vahingosta, varkaudesta tai luvattomasta käytöstä. Varkaudesta ja luvattomasta käytöstä on tehtävä viipymättä ilmoitus poliisille. Vuokranantajan on tämän jälkeen ilmoitettava Vuokraajalle, mihin toimenpiteisiin tapahtuneen johdosta on ryhdyttävä. Vuokraaja saa kuitenkin korjauttaa ajoneuvoa Vuokranantajan kustannuksella enintään 50 euron arvosta, jos se matkan jatkumisen kannalta on välttämätöntä eikä Vuokraaja saa yhteyttä Vuokranantajaan ennen vaadittavaa korjausta. Tällöin Vuokraajan on hankittava ajoneuvon korjanneelta liikkeeltä todistus tehdystä korjauksesta sekä yksilöity tosite suoritetusta maksusta, jonka perusteella Vuokranantaja voi hyvittää korjauskulut Vuokraajalle.</li>
             <li>Liikennevahingon sattuessa Vuokraaja on aina velvollinen tekemään viipymättä vahinkoilmoituksen Vuokranantajalle. Vahingosta on ilmoitettava poliisille, mikäli kyseessä on henkilövahinko tai mikäli syyllisyys on epäselvä. Myös hirvieläinvahingosta Vuokraajan on aina tehtävä ilmoitus poliisille sekä toimitettava vuokranantajalle poliisin antama todistus tehdystä ilmoituksesta.</li>
             <li>Vuokraaja vastaa vahingoista enintään 1000 € omavastuuseen asti, ellei kyse ole tahallisuudesta tai törkeästä huolimattomuudesta, jolloin vastuu on täysimääräinen.</li>
@@ -332,35 +331,36 @@
 
   </div>
 
-<script>
-  function laskeHinta() {
-    const alkuPvm = document.getElementById("start").value;
-    const loppuPvm = document.getElementById("end").value;
-    const alkuAika = document.getElementById("start_time").value;
-    const loppuAika = document.getElementById("end_time").value;
+  <script>
+    function laskeHinta() {
+      const alkuPvm = document.getElementById("start").value;
+      const loppuPvm = document.getElementById("end").value;
+      const alkuAika = document.getElementById("start_time").value;
+      const loppuAika = document.getElementById("end_time").value;
 
-    if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) {
-      document.getElementById("tulos").innerText = "";
-      return;
+      if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) {
+        document.getElementById("tulos").innerHTML = "";
+        return;
+      }
+
+      const alku = new Date(alkuPvm + "T" + alkuAika);
+      const loppu = new Date(loppuPvm + "T" + loppuAika);
+      const ero = loppu - alku;
+
+      if (ero <= 0) {
+        document.getElementById("tulos").innerText = "Tarkista päivämäärät ja kellonajat";
+        return;
+      }
+
+      const paivat = Math.ceil(ero / (1000 * 60 * 60 * 24));
+      const alennus = Math.floor(paivat / 2) * 5;
+      const hinta = (paivat * 30) - alennus;
+
+      document.getElementById("tulos").innerHTML =
+        "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " € | Hinta: " + hinta + " €" +
+        "<br><small style='color:#666; font-weight:normal;'>Laskettu hinta on arvio. Vahvistamme hinnan lähettämässämme laskussa.</small>";
     }
-
-    const alku = new Date(alkuPvm + "T" + alkuAika);
-    const loppu = new Date(loppuPvm + "T" + loppuAika);
-    const ero = loppu - alku;
-
-    if (ero <= 0) {
-      document.getElementById("tulos").innerText = "Tarkista päivämäärät ja kellonajat";
-      return;
-    }
-
-    const paivat = Math.ceil(ero / (1000 * 60 * 60 * 24));
-    const alennus = Math.floor(paivat / 2) * 5;
-    const hinta = (paivat * 30) - alennus;
-
-    document.getElementById("tulos").innerText =
-      "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " € | Hinta: " + hinta + " €";
-  }
-</script>
+  </script>
 
 </body>
 </html>
