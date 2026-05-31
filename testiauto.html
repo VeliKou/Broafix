@@ -310,14 +310,28 @@
         <label for="start">Aloituspäivä</label>
         <input type="date" id="start" name="start_date" onchange="laskeHinta()" required>
 
-        <label for="start_time">Luovutusaika</label>
-        <input type="time" id="start_time" name="start_time" onchange="laskeHinta()" required>
+<label for="start_time">Luovutusaika (16–20)</label>
+<input type="time"
+       id="start_time"
+       name="start_time"
+       min="16:00"
+       max="20:00"
+       value="17:00"
+       onchange="laskeHinta()"
+       required>
 
         <label for="end">Lopetuspäivä</label>
         <input type="date" id="end" name="end_date" onchange="laskeHinta()" required>
 
-        <label for="end_time">Palautusaika</label>
-        <input type="time" id="end_time" name="end_time" onchange="laskeHinta()" required>
+<label for="start_time">palautusaika (9–16)</label>
+<input type="time"
+       id="start_time"
+       name="start_time"
+       min="9:00"
+       max="16:00"
+       value="15:00"
+       onchange="laskeHinta()"
+       required>
 
         <div class="result" id="tulos"></div>
 
