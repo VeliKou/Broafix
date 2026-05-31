@@ -260,7 +260,7 @@
     <p class="company-id">Broafix Oy · Y:3579719-5</p>
 
     <div class="card">
-      <p class="price">30 € / vrk</p>
+      <p class="price">40 € / vrk</p>
       <p style="text-align:center;">
         Tilava ja käytännöllinen pakettiauto kuljetuksiin ja muuttoihin.<br>
         Sijaitsee Karjalohjalla.
@@ -323,10 +323,10 @@
         <label for="end">Lopetuspäivä</label>
         <input type="date" id="end" name="end_date" onchange="laskeHinta()" required>
 
-<label for="start_time">palautusaika (9–16)</label>
+<label for="end_time">palautusaika (9–16)</label>
 <input type="time"
-       id="start_time"
-       name="start_time"
+       id="end_time"
+       name="end_time"
        min="9:00"
        max="16:00"
        value="15:00"
@@ -352,7 +352,7 @@
 
       <p class="muted">
         Varaus vahvistetaan erikseen. Maksu ennen luovutusta. Lasku lähetetään sähköpostitse.
-        Tiedustelut, lyhyemmät/pidemmät vuokraukset, muut palautus/luovutusajat: karjalohjavuokraus@broafix.com
+        Tiedustelut, lyhyemmät/pidemmät vuokraukset, muut palautus/luovutusajat: vuokrauskarjalohja@broafix.com
       </p>
     </div>
 
@@ -395,7 +395,7 @@
             <li>Vuokraaja vastaa aina täysimääräisesti vuokra-aikana ajoneuvon käyttämisestä aiheutuneista pysäköinti- ja pysäköintivirhemaksuista, yksityisen pysäköinninvalvonnan maksuista, ylikuormamaksuista, rikesakoista, ylinopeudesta ja muusta liikennerikoksesta tai rikkomuksesta aiheutuneista sakoista, tietullimaksuista sekä ruuhkamaksuista. Vuokraaja oikeuttaa vuokranantajan antamaan viranomaisille henkilötietonsa edellä todettujen seuraamusmaksujen määräämiseksi.</li>
             <li>Vuokraaja maksaa käyttämänsä polttoaineen. Ajoneuvossa käytettävä polttoaine ilmenee vuokrasopimuksesta ja/tai ajoneuvon rekisteriotteesta. Vuokraaja vastaa väärän polttoaineen tankkaamisesta tai käytöstä ajoneuvolle aiheutuvista vahingoista täysimääräisesti. Ajoneuvo palautetaan samaan polttoainetasoon kuin luovutettaessa. Puuttuvasta polttoaineesta veloitetaan todellinen kustannus + 20 € tankkausmaksu.</li>
             <li>Jos ajoneuvolle tai Vuokranantajalle aiheutuneet vahingot ovat seurausta Vuokraajan tahallisuudesta, törkeästä tuottamuksesta, ajoneuvon käyttämisestä alkoholin tai muun huumaavan aineen vaikutuksen alaisena, rikolliseen tarkoitukseen taikka siitä, että Vuokraaja on muutoin olennaisesti rikkonut tämän sopimuksen ehtoja, Vuokraaja on velvollinen korvaamaan vahingon kokonaisuudessaan.</li>
-            <li>Peruutus on tehtävä sähköpostilla tai tekstiviestillä. Alle 6 h ennen vuokra-ajan alkua tehdyistä peruutuksista veloitetaan yhden vuorokauden vuokrahinta.</li>       
+            <li>Peruutus on tehtävä sähköpostilla tai tekstiviestillä. Yli 6 tuntia ennen vuokra-ajan alkua tehty peruutus on maksuton. Alle 6 tuntia ennen vuokra-ajan alkua tehdystä peruutuksesta sekä noutamatta jätetystä varauksesta veloitetaan yhden vuorokauden vuokrahinta.</li>       
            </ol>
         </li>
 
@@ -430,7 +430,7 @@
       
         <li>
           <h3>Tietosuoja</h3>
-          Rekisterinpitäjä: Broafix Oy (Y:3579719-5), yhteys: laskutus@broafix.com.
+          Rekisterinpitäjä: Broafix Oy (Y:3579719-5), yhteys: vuokrauskarjalohja@broafix.com.
           Käsittelemme vuokraajan ja mahdollisen 2. kuljettajan henkilötietoja (nimi ja yhteystiedot) vuokrauksen toteuttamiseksi, laskutusta varten sekä mahdollisten vahinko- ja riita-asioiden selvittämiseksi. Vuokraukseen ja laskutukseen liittyviä asiakirjoja säilytetään kirjanpito- ja verotusvelvoitteiden mukaisesti; muut tiedot poistetaan tai anonymisoidaan, kun niitä ei enää tarvita, ellei vahinko-, perintä- tai riita-asia edellytä pidempää säilytystä. Tietoja voidaan luovuttaa viranomaisille, vakuutusyhtiölle ja perintään tarpeen mukaan. Rekisteröidyllä on oikeus saada pääsy tietoihin sekä pyytää oikaisua ja tehdä valitus tietosuojavaltuutetulle.
         </li>
       </ol>
@@ -462,7 +462,7 @@
 
       const paivat = Math.ceil(ero / (1000 * 60 * 60 * 24));
       const alennus = Math.floor(paivat / 2) * 5;
-      const hinta = (paivat * 30) - alennus;
+      const hinta = (paivat * 40) - alennus;
 
       document.getElementById("tulos").innerHTML =
         "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " € | Hinta: " + hinta + " €. Laskettu hinta on arvio. Vahvistamme hinnan lähettämässämme laskussa.";
