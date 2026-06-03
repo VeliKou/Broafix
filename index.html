@@ -5,7 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Broafix</title>
+
   <style>
+    :root {
+      --bg: #f5f5f5;
+      --card: #ffffff;
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --text: #222;
+      --muted: #666;
+      --sidebar: #1f2937;
+      --radius: 12px;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -13,8 +25,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
     }
 
     .layout {
@@ -22,82 +34,98 @@
       min-height: 100vh;
     }
 
+    /* SIDEBAR */
     .sidebar {
       width: 260px;
-      background: #1f2937;
+      background: var(--sidebar);
       color: white;
-      padding: 30px 20px;
+      padding: 25px 20px;
     }
 
-    .sidebar h1 {
-      font-size: 28px;
-      margin: 0 0 30px 0;
-      text-align: left;
+    .sidebar-logo {
+      max-width: 160px;
+      display: block;
+      margin-bottom: 25px;
     }
 
     .nav {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 12px;
     }
 
     .nav a {
       text-decoration: none;
-      background: #2563eb;
+      background: var(--primary);
       color: white;
       padding: 12px 14px;
-      border-radius: 8px;
-      transition: background 0.2s ease;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: 0.2s ease;
     }
 
     .nav a:hover {
-      background: #1e40af;
+      background: var(--primary-dark);
+      transform: translateY(-1px);
     }
 
+    /* CONTENT */
     .content {
       flex: 1;
-      padding: 60px 30px;
+      padding: 40px 30px;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
     }
 
     .hero {
-      background: white;
+      background: var(--card);
       width: 100%;
-      max-width: 700px;
+      max-width: 750px;
       padding: 50px 30px;
-      border-radius: 14px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      border-radius: var(--radius);
       text-align: center;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+
+    .hero img {
+      max-width: 180px;
+      margin-bottom: 20px;
     }
 
     .hero h2 {
-      margin-top: 0;
       font-size: 32px;
+      margin: 10px 0;
     }
 
     .hero p {
       font-size: 16px;
-      color: #555;
+      color: var(--muted);
       margin-bottom: 30px;
     }
 
-    .logo-placeholder {
-      font-size: 38px;
-      font-weight: bold;
-      color: #888;
-      margin-top: 20px;
+    .cta-buttons {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
-    
-.logo {
-  max-width: 180px;
-  height: auto;
-  margin-top: 20px;
-}
+    .cta-buttons a {
+      text-decoration: none;
+      background: var(--primary);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
 
+    .cta-buttons a:hover {
+      background: var(--primary-dark);
+    }
 
+    /* MOBILE */
     @media (max-width: 768px) {
       .layout {
         flex-direction: column;
@@ -105,10 +133,11 @@
 
       .sidebar {
         width: 100%;
+        text-align: center;
       }
 
-      .sidebar h1 {
-        text-align: center;
+      .nav {
+        flex-direction: column;
       }
 
       .content {
@@ -116,7 +145,7 @@
       }
 
       .hero {
-        padding: 30px 20px;
+        padding: 35px 20px;
       }
 
       .hero h2 {
@@ -125,32 +154,43 @@
     }
   </style>
 </head>
+
 <body>
 
-  <div class="layout">
-    <aside class="sidebar">
-      <h1>Broafix</h1>
+<div class="layout">
 
-      <nav class="nav">
-        <a href="GOLF.html">Autovuokraus Volkswagen Golf - Kuopio</a>
-        <a href="FEI.html">Autovuokraus Volkswagen transporter - Karjalohja</a>
-        <a href="testiauto.html">Autovuokraus testiauto - Karjalohja</a>
-        <!--
-        <a href="autovuokraus-kuopio.html">Autovuokraus Kuopio_Työnalla</a>
-        <a href="autovuokraus-karjalohja.html">Autovuokraus Karjalohja_Työnalla</a>
-        <a href="autokorjaus-kuopio.html">Autokorjaus Kuopio_Työnalla</a>
-        <a href="autokorjaus-karjalohja.html">Autokorjaus Karjalohja_Työnalla</a>
-          -->
-        </nav>
-    </aside>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <img src="Broafix_logo.png" alt="Broafix logo" class="sidebar-logo">
 
-    <main class="content">
-      <section class="hero">
-        <h2>Tervetuloa Broafix-sivustolle</h2>
-        <img src="Broafix_logo.png" alt="Broafix logo" class="logo">
-      </section>
-    </main>
-  </div>
+    <nav class="nav">
+      <a href="GOLF.html">Volkswagen Golf - Kuopio</a>
+      <a href="FEI.html">Transporter - Karjalohja</a>
+      <a href="testiauto.html">Testiauto</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="content">
+    <section class="hero">
+
+      <img src="Broafix_logo.png" alt="Broafix logo">
+
+      <h2>Tervetuloa Broafix-sivustolle</h2>
+
+      <p>
+        Autovuokraus sekä huolto Karjalohjalla ja Kuopiossa.<br>
+      </p>
+
+      <div class="cta-buttons">
+        <a href="FEI.html">Vuokraa pakettiauto</a>
+        <a href="GOLF.html">Vuokraa henkilöauto</a>
+      </div>
+
+    </section>
+  </main>
+
+</div>
 
 </body>
 </html>
