@@ -355,16 +355,20 @@
 
     <div class="card hero">
       <div class="hero-text">
-        <p class="price">40 € / vrk</p>
+        <p class="price">45 € / vrk</p>
         <p class="hero-subtext">
-      Pakettiauto kuljetuksiin ja muuttoihin.<br>
+      Edullinen pakettiauto vuokralle.<br>
+      Pidempiaikaiset vuokraukset edullisempaan hintaan.<br>
+      Vanha mutta luotettava ja hyvä ajettava paku.<br>
+      Sopii hyvin muuttoihin, remonttikuljetuksiin ja tavaran siirtoon.<br>
       Tavaratilan mitat (n. 5,2 m³):<br>
       – Pituus: 240 cm<br>
       – Leveys: 160 cm (120 cm pyöräkoteloiden kohdalta)<br>
       – Korkeus: 135 cm<br>
       Auton korkeus: n. 2,15 m.<br>
       Sijaitsee Karjalohjalla.<br>
-      Manuaali, diesel.
+      Manuaalivaihteinen dieselauto, ajettavissa B-ajokortilla.  
+      Vuokraan sisältyy osakasko ja hinausturva.
         </p>
       </div>
 
@@ -584,7 +588,7 @@ Henkilötietoja säilytetään myös Formspree-palvelussa, joka toimii kolmannen
 
       const paivat = Math.ceil(ero / (1000 * 60 * 60 * 24));
       const alennus = Math.floor(paivat / 2) * 5;
-      const hinta = (paivat * 40) - alennus;
+      const hinta = (paivat * 45) - alennus;
 
       document.getElementById("tulos").innerHTML =
         "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " € | Hinta: " + hinta + " €. Laskettu hinta on arvio. Vahvistamme hinnan lähettämässämme laskussa.";
