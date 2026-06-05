@@ -21,7 +21,6 @@
 
     h1, h2 {
       text-align: center;
-      margin: 10px 0;
     }
 
     .card {
@@ -29,14 +28,7 @@
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .company-id {
-      text-align: center;
-      font-size: 13px;
-      color: #555;
-      margin: 0 0 18px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .price {
@@ -46,40 +38,12 @@
       text-align: center;
     }
 
-    input, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      font-size: 14px;
-    }
-
-    button {
-      background-color: #2c7a2c;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #256b25;
-    }
-
-    .result {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #2c7a2c;
-    }
-
     .top-buttons {
       position: fixed;
       top: 15px;
       right: 15px;
       display: flex;
       gap: 10px;
-      z-index: 1000;
     }
 
     .top-button {
@@ -94,6 +58,25 @@
       background: #256b25;
     }
 
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #2c7a2c;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #256b25;
+    }
+
     .footer-company {
       text-align: center;
       font-size: 13px;
@@ -101,10 +84,8 @@
       margin-top: 10px;
     }
 
-    @media (max-width: 640px) {
-      .container {
-        padding-top: 70px;
-      }
+    iframe {
+      border-radius: 10px;
     }
   </style>
 </head>
@@ -113,37 +94,43 @@
 
   <div class="top-buttons">
     <a href="index.html" class="top-button">🏠 Etusivulle</a>
-    <a href="javascript:history.back()" class="top-button">← Edellinen sivu</a>
+    <a href="javascript:history.back()" class="top-button">← Edellinen</a>
   </div>
 
   <div class="container">
+
     <h1>Pakettiauto Volkswagen Transporter 1999</h1>
-    <p class="company-id">Broafix Oy · Y:3579719-5</p>
+    <p style="text-align:center;">Broafix Oy · Y:3579719-5</p>
 
     <div class="card">
       <p class="price">40 € / vrk</p>
-      <p>
-        Pakettiauto kuljetuksiin ja muuttoihin. Tavaratilan koko n. 5,4 m³<br>
-        Sijaitsee Karjalohjalla.
+      <p style="text-align:center;">
+        Pakettiauto kuljetuksiin ja muuttoihin.<br>
+        Tavaratila n. 5,4 m³ – Karjalohja
       </p>
-      <img src="transporter.jpg" style="width:160px; border-radius:8px;">
+      <div style="text-align:center;">
+        <img src="transporter.jpg" style="width:180px; border-radius:8px;">
+      </div>
     </div>
 
-    <!-- ✅ SimplyBook -->
+    <!-- ✅ GOOGLE AJANVARAUS -->
     <div class="card">
       <h2>Varaa aika</h2>
 
-      <script src="//widget.simplybook.it/v2/widget/widget.js"></script>
-      <script>
-        var widget = new SimplybookWidget({
-          widget_type: "iframe",
-          url: "https://broafix.simplybook.it",
-          theme: "minimal"
-        });
-      </script>
+      <p style="text-align:center; font-size:14px;">
+        Valitse vapaa aika kalenterista ja tee varaus.<br>
+        Saat vahvistuksen sähköpostiisi.
+      </p>
+
+      <iframe 
+        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Op89rdkbobVXY_mBMqIbjzaLjEcJpeWjuY22iYlouDhLSdpm0ujiqERP8IzbA8NAgOpNEK1Ay?gv=true"
+        width="100%"
+        height="700"
+        frameborder="0">
+      </iframe>
     </div>
 
-    <!-- ✅ Formspree varalla -->
+    <!-- ✅ FORM (backup / erityistilanteet) -->
     <div class="card">
       <h2>Vaihtoehtoinen varaus</h2>
 
@@ -152,10 +139,10 @@
         <input type="email" name="email" placeholder="Sähköposti" required>
         <input type="text" name="phone" placeholder="Puhelin" required>
 
-        <input type="date" id="start" onchange="laskeHinta()" required>
-        <input type="date" id="end" onchange="laskeHinta()" required>
+        <label>Toivottu vuokra-aika</label>
+        <input type="text" name="rental_time" placeholder="esim. 10.6–12.6">
 
-        <div class="result" id="tulos"></div>
+        <textarea name="message" placeholder="Lisätiedot"></textarea>
 
         <button type="submit">Lähetä varauspyyntö</button>
       </form>
@@ -163,27 +150,6 @@
 
     <p class="footer-company">Broafix Oy · Y:3579719-5</p>
   </div>
-
-  <script>
-    function laskeHinta() {
-      const alku = new Date(document.getElementById("start").value);
-      const loppu = new Date(document.getElementById("end").value);
-
-      if (!alku || !loppu) return;
-
-      const paivat = Math.ceil((loppu - alku) / (1000 * 60 * 60 * 24));
-
-      if (paivat <= 0) {
-        document.getElementById("tulos").innerText = "Tarkista päivät";
-        return;
-      }
-
-      const hinta = paivat * 40;
-
-      document.getElementById("tulos").innerText =
-        "Arvio: " + paivat + " päivää, " + hinta + " €";
-    }
-  </script>
 
 </body>
 </html>
