@@ -94,6 +94,11 @@
       margin-top: 10px;
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     @media (max-width: 640px) {
       iframe {
         height: 500px;
@@ -123,20 +128,24 @@
       </p>
 
       <div style="text-align:center;">
-        <img src="transporter.jpg" style="width:180px; border-radius:8px;">
+        <img src="transporter.jpg" alt="Volkswagen Transporter">
       </div>
     </div>
 
     <!-- ✅ KALENTERI -->
     <div class="card">
-      <h2>Saatavuuskalenteri</h2>
+      <h2>VW Transporter – saatavuus</h2>
 
       <p style="text-align:center; font-size:14px;">
         ✅ Tyhjät päivät = vapaa<br>
         ❌ VARATTU = ei saatavilla
       </p>
 
-      <iframe src="https://calendar.google.com/calendar/embed?src=vuokrauskarjalohja%40broafix.com&ctz=Europe%2FHelsinki"></iframe>
+      <iframe 
+        src="https://calendar.google.com/calendar/embed?src=0c823dc279b67e80e6a1bf760568b9482c0b95f8bf23155ce777d06515a7499b%40group.calendar.google.com&ctz=Europe%2FHelsinki"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
     </div>
 
     <!-- ✅ VARAUSLOMAKE -->
@@ -167,4 +176,3 @@
 
 </body>
 </html>
-``
