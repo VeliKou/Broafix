@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pakettiauton vuokraus - Volkswagen Transporter 1999 - Karjalohja</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pakettiauton vuokraus - Volkswagen Transporter 1999</title>
 
   <style>
     body {
@@ -24,7 +24,7 @@
     }
 
     .card {
-      background: white;
+      background: #fff;
       padding: 20px;
       margin-bottom: 20px;
       border-radius: 10px;
@@ -44,14 +44,16 @@
       right: 15px;
       display: flex;
       gap: 10px;
+      z-index: 1000;
     }
 
     .top-button {
       background: #2c7a2c;
       color: white;
-      padding: 10px 16px;
+      padding: 10px 14px;
       border-radius: 20px;
       text-decoration: none;
+      font-size: 14px;
     }
 
     .top-button:hover {
@@ -64,6 +66,7 @@
       margin-top: 10px;
       border-radius: 6px;
       border: 1px solid #ccc;
+      box-sizing: border-box;
     }
 
     button {
@@ -77,15 +80,24 @@
       background-color: #256b25;
     }
 
-    .footer-company {
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    .footer {
       text-align: center;
       font-size: 13px;
       color: #555;
       margin-top: 10px;
     }
 
-    iframe {
-      border-radius: 10px;
+    @media (max-width: 640px) {
+      iframe {
+        height: 500px;
+      }
     }
   </style>
 </head>
@@ -102,37 +114,34 @@
     <h1>Pakettiauto Volkswagen Transporter 1999</h1>
     <p style="text-align:center;">Broafix Oy · Y:3579719-5</p>
 
+    <!-- Auto -->
     <div class="card">
       <p class="price">40 € / vrk</p>
       <p style="text-align:center;">
         Pakettiauto kuljetuksiin ja muuttoihin.<br>
         Tavaratila n. 5,4 m³ – Karjalohja
       </p>
+
       <div style="text-align:center;">
         <img src="transporter.jpg" style="width:180px; border-radius:8px;">
       </div>
     </div>
 
-    <!-- ✅ GOOGLE AJANVARAUS -->
+    <!-- ✅ KALENTERI -->
     <div class="card">
-      <h2>Varaa aika</h2>
+      <h2>Saatavuuskalenteri</h2>
 
       <p style="text-align:center; font-size:14px;">
-        Valitse vapaa aika kalenterista ja tee varaus.<br>
-        Saat vahvistuksen sähköpostiisi.
+        ✅ Tyhjät päivät = vapaa<br>
+        ❌ VARATTU = ei saatavilla
       </p>
 
-      <iframe 
-        src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ1Op89rdkbobVXY_mBMqIbjzaLjEcJpeWjuY22iYlouDhLSdpm0ujiqERP8IzbA8NAgOpNEK1Ay?gv=true"
-        width="100%"
-        height="700"
-        frameborder="0">
-      </iframe>
+      <iframe src="https://calendar.google.com/calendar/embed?src=vuokrauskarjalohja%40broafix.com&ctz=Europe%2FHelsinki"></iframe>
     </div>
 
-    <!-- ✅ FORM (backup / erityistilanteet) -->
+    <!-- ✅ VARAUSLOMAKE -->
     <div class="card">
-      <h2>Vaihtoehtoinen varaus</h2>
+      <h2>Tee varauspyyntö</h2>
 
       <form action="https://formspree.io/f/xykveewp" method="POST">
         <input type="text" name="name" placeholder="Nimi" required>
@@ -146,10 +155,16 @@
 
         <button type="submit">Lähetä varauspyyntö</button>
       </form>
+
+      <p style="font-size:13px;">
+        Varaus vahvistetaan sähköpostitse. Maksu ennen luovutusta.
+      </p>
     </div>
 
-    <p class="footer-company">Broafix Oy · Y:3579719-5</p>
+    <p class="footer">Broafix Oy · Y:3579719-5</p>
+
   </div>
 
 </body>
 </html>
+``
