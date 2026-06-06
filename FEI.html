@@ -24,6 +24,13 @@
       box-sizing: border-box;
     }
 
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 0;
+      border-radius: 10px;
+    }
+    
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -397,25 +404,25 @@
       <h2>Tee varaus</h2>
 
       <form action="https://formspree.io/f/xykveewp" method="POST">
-        <label for="name">Nimi</label>
+        <label for="name">Nimi*</label>
         <input type="text" id="name" name="name" required>
 
         <label for="birthdate">Syntymäaika</label>
-        <input type="date" id="birthdate" name="birthdate" required>
+        <input type="date" id="birthdate" name="birthdate">
 
-        <label for="phone">Puhelin</label>
+        <label for="phone">Puhelin*</label>
         <input type="tel" id="phone" name="phone" required>
 
-        <label for="email">Sähköposti</label>
-        <input type="email" id="email" name="email" required>
+        <label for="email">Sähköposti*</label>
+        <input type="email" id="email" name="email">
 
         <label for="address">Osoite</label>
         <input type="text" id="address" name="address">
 
-        <label for="start">Aloituspäivä</label>
+        <label for="start">Aloituspäivä*</label>
         <input type="date" id="start" name="start_date" onchange="laskeHinta()" required>
 
-        <label for="start_time">Luovutusaika (16–20)</label>
+        <label for="start_time">Luovutusaika (16–20)*</label>
         <input
           type="time"
           id="start_time"
@@ -426,10 +433,10 @@
           onchange="laskeHinta()"
           required>
 
-        <label for="end">Lopetuspäivä</label>
+        <label for="end">Lopetuspäivä*</label>
         <input type="date" id="end" name="end_date" onchange="laskeHinta()" required>
 
-        <label for="end_time">Palautusaika (9–16)</label>
+        <label for="end_time">Palautusaika (9–16)*</label>
         <input
           type="time"
           id="end_time"
