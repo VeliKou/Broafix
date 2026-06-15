@@ -7,17 +7,16 @@
 
   <meta name="description" content="Vuokraa pakettiauto tai henkilöauto edullisesti Karjalohjalla ja Kuopiossa. Hyvin huolletut autot – nopea varaus.">
   
-  <!-- ✅ KORJATTU STYLE -->
+  
   <style>
     :root {
-      --bg: #f7f9fc;
+      --bg: #f5f5f5;
       --card: #ffffff;
-      --primary: #1f3a5f;
-      --primary-dark: #162c46;
-      --accent: #f2b705;
-      --text: #1a1a1a;
-      --muted: #6b7280;
-      --sidebar: #1f3a5f;
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --text: #222;
+      --muted: #666;
+      --sidebar: #1f2937;
       --radius: 12px;
     }
 
@@ -59,18 +58,16 @@
 
     .nav a {
       text-decoration: none;
-      background: rgba(255,255,255,0.08);
+      background: var(--primary);
       color: white;
       padding: 12px 14px;
       border-radius: 10px;
       font-size: 15px;
-      transition: 0.25s ease;
-      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.2s ease;
     }
 
     .nav a:hover {
-      background: var(--accent);
-      color: var(--primary);
+      background: var(--primary-dark);
       transform: translateY(-1px);
     }
 
@@ -90,7 +87,7 @@
       padding: 50px 30px;
       border-radius: var(--radius);
       text-align: center;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
     }
 
     .hero img {
@@ -98,22 +95,15 @@
       margin-bottom: 20px;
     }
 
-    .hero h1 {
-      font-size: 30px;
-      margin: 10px 0;
-      color: var(--primary);
-    }
-
     .hero h2 {
-      font-size: 22px;
-      margin: 10px 0 20px;
+      font-size: 32px;
+      margin: 10px 0;
     }
 
     .hero p {
       font-size: 16px;
       color: var(--muted);
       margin-bottom: 30px;
-      line-height: 1.6;
     }
 
     .cta-buttons {
@@ -127,16 +117,14 @@
       text-decoration: none;
       background: var(--primary);
       color: white;
-      padding: 12px 20px;
+      padding: 12px 18px;
       border-radius: 10px;
       font-weight: bold;
-      transition: 0.25s;
+      transition: 0.2s;
     }
 
     .cta-buttons a:hover {
-      background: var(--accent);
-      color: var(--primary);
-      transform: translateY(-2px);
+      background: var(--primary-dark);
     }
 
     /* MOBILE */
@@ -150,6 +138,10 @@
         text-align: center;
       }
 
+      .nav {
+        flex-direction: column;
+      }
+
       .content {
         padding: 30px 15px;
       }
@@ -158,8 +150,8 @@
         padding: 35px 20px;
       }
 
-      .hero h1 {
-        font-size: 24px;
+      .hero h2 {
+        font-size: 26px;
       }
     }
   </style>
@@ -171,9 +163,11 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
+ <!--   <img src="Broafix_logo2.jpg" alt="Broafix logo" class="sidebar-logo"> -->
+
     <nav class="nav">
-      <a href="vuokraa-henkiloauto-gkx-201.html">Vuokraa henkilöauto Kuopiossa</a>
-      <a href="vuokraa-pakettiauto-fei-676.html">Vuokraa pakettiauto Karjalohjalla</a>
+      <a href="vuokraa-henkiloauto-gkx-201.html">Vuokraa Henkilöauto - Kuopio</a>
+      <a href="vuokraa-pakettiauto-fei-676.html">Vuokraa pakettiauto - Karjalohja</a>
     </nav>
   </aside>
 
@@ -181,27 +175,26 @@
   <main class="content">
     <section class="hero">
 
-      <!-- ✅ SEO ALT -->
-      <img src="Broafix_logo2.jpg" alt="Broafix autovuokraus logo Karjalohja ja Kuopio">
+      <img src="Broafix_logo2.jpg" alt="Broafix logo">
 
-      <!-- ✅ YKSI H1 -->
-      <h1>Autovuokraus Karjalohja & Kuopio</h1>
+<h1>Autovuokraus Karjalohja & Kuopio – vuokraa pakettiauto tai henkilöauto</h1>
       
-      <h2>Vuokraa pakettiauto tai henkilöauto helposti ja edullisesti</h2>
+ <h2>Vuokraa auto helposti ja edullisesti</h2>
 
-      <p>
-        Tarjoamme edullista ja luotettavaa autonvuokrausta.<br>
-        Keskitymme vanhempiin, luotettaviin ja hyvin huollettuihin autoihin.<br><br>
+<p>
+  Tarjoamme edullista ja luotettavaa autonvuokrausta.<br>
+  Keskitymme vanhempiin, luotettaviin ja hyvin huollettuihin autoihin.<br><br>
 
-        Olemme pieni yritys ja toimimme pienellä kulurakenteella,
-        minkä ansiosta pystymme tarjoamaan edullisemmin kuin suuremmat toimijat.<br><br>
+  Olemme pieni yritys ja toimimme pienellä kulurakenteella,
+  minkä ansiosta pystymme tarjoamaan edullisemmin kuin suuremmat toimijat.<br><br>
 
-        Valitse sopiva auto ja varaa nopeasti.
-      </p>
+  Valitse sopiva auto ja varaa nopeasti.
+</p>
+      
 
       <div class="cta-buttons">
-        <a href="karjalohja.html">Autovuokraus Karjalohja</a>
-        <a href="kuopio.html">Autovuokraus Kuopio</a>
+        <a href="karjalohja.html">Karjalohjan toimipiste</a>
+        <a href="kuopio.html">Kuopion toimipiste</a>
       </div>
 
     </section>
