@@ -7,16 +7,21 @@
 
   <meta name="description" content="Vuokraa pakettiauto tai henkilöauto edullisesti Karjalohjalla ja Kuopiossa. Hyvin huolletut autot – nopea varaus.">
   
-  
-  <style>
+style>
     :root {
-      --bg: #f5f5f5;
+      --bg: #f7f9fc;
       --card: #ffffff;
-      --primary: #2563eb;
-      --primary-dark: #1e40af;
-      --text: #222;
-      --muted: #666;
-      --sidebar: #1f2937;
+
+      /* ✅ Broafix brändivärit */
+      --primary: #1f3a5f;
+      --primary-dark: #162c46;
+      --accent: #f2b705;
+
+      --text: #1a1a1a;
+      --muted: #6b7280;
+
+      --sidebar: #1f3a5f;
+
       --radius: 12px;
     }
 
@@ -123,8 +128,11 @@
       transition: 0.2s;
     }
 
+    /* ✅ Hover tekee napista "elävän" */
     .cta-buttons a:hover {
-      background: var(--primary-dark);
+      background: var(--accent);
+      color: var(--primary);
+      transform: translateY(-2px);
     }
 
     /* MOBILE */
