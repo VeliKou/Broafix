@@ -365,6 +365,7 @@
     <div class="card hero">
       <div class="hero-text">
         <p class="price">45 € / vrk</p>
+        <p style="font-size:13px; color:gray;">Sisältää ALV 25.5 %</p>
         <p class="hero-subtext">
       Vuokraa edullinen pakettiauto Karjalohjalla.<br>
       Pidempiaikaiset vuokraukset edullisempaan hintaan.<br>
@@ -471,7 +472,7 @@
         <strong>Tärkeät tiedot lyhyesti:</strong><br>
         Varaus vahvistetaan erikseen. Maksu ennen luovutusta. Lasku lähetetään sähköpostitse.<br>
         Sopimukseen kuuluu 100 km / vrk. Ylimenevistä kilometreistä veloitetaan 0,20 € / km. Polttoaine ei kuulu hintaan, palautetaan tankki täynnä.<br>
-        Tiedustelut, lyhyemmät/pidemmät vuokraukset ja muut palautus-/luovutusajat: vuokrauskarjalohja@broafix.com
+        Tiedustelut, lyhyemmät/pidemmät vuokraukset ja muut palautus-/luovutusajat: vuokrauskarjalohja@broafix.com<br>
       </p>
     </div>
 
@@ -613,7 +614,10 @@ Henkilötietoja säilytetään myös Formspree-palvelussa, joka toimii kolmannen
       const hinta = (paivat * 45) - alennus;
 
       document.getElementById("tulos").innerHTML =
-        "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " € | Hinta: " + hinta + " €. Laskettu hinta on arvio. Vahvistamme hinnan lähettämässämme laskussa.";
+  "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " €<br>" +
+  "<strong>Hinta yhteensä: " + hinta + " € (sis. ALV 25.5 %)</strong><br>" +
+  "Laskettu hinta on arvio. Vahvistamme hinnan lähettämässämme laskussa.";
+
     }
   </script>
 </body>
