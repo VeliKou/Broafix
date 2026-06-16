@@ -364,12 +364,14 @@
 
     <div class="card hero">
       <div class="hero-text">
-        <p class="price">45 € / vrk</p>
-        <p style="font-size:13px; color:gray;">Sisältää ALV 25.5 %</p>
+        <p class="price">45 € / vrk</p>      
+<p style="font-size:14px; color:#444; margin-top:8px;">
+Sis. 100 km / vrk · Ylimenevät 0,10 € / km · Polttoaine ei sisälly · Sis. ALV 25,5 %
+</p>
         <p class="hero-subtext">
       Vuokraa edullinen pakettiauto Karjalohjalla.<br>
-      Pidempiaikaiset vuokraukset edullisempaan hintaan.<br>
-      Vanha mutta luotettava ja hyvä ajettava paku.<br>
+      Pidempiaikaiset vuokraukset edullisempaan hintaan. (Alennettu hinta näkyy automaattisesti laskurissa.)<br>
+      luotettava ja edullinen paku silloin, kun tarvitset tilaa etkä turhaa hienostelua.<br>
       Sopii hyvin muuttoihin, remonttikuljetuksiin ja tavaran siirtoon.<br>
       Tavaratilan mitat (n. 5,2 m³):<br>
       – Pituus: 240 cm, Korkeus: 135 cm<br>
@@ -416,7 +418,7 @@
         <input type="tel" id="phone" name="phone" required>
 
         <label for="email">Sähköposti*</label>
-        <input type="email" id="email" name="email">
+        <input type="email" id="email" name="email" required>
 
         <label for="address">Osoite</label>
         <input type="text" id="address" name="address">
@@ -471,8 +473,8 @@
       <p class="muted">
         <strong>Tärkeät tiedot lyhyesti:</strong><br>
         Varaus vahvistetaan erikseen. Maksu ennen luovutusta. Lasku lähetetään sähköpostitse.<br>
-        Sopimukseen kuuluu 100 km / vrk. Ylimenevistä kilometreistä veloitetaan 0,20 € / km. Polttoaine ei kuulu hintaan, palautetaan tankki täynnä.<br>
         Tiedustelut, lyhyemmät/pidemmät vuokraukset ja muut palautus-/luovutusajat: vuokrauskarjalohja@broafix.com<br>
+        Ajoneuvo palautetaan samaan polttoainetasoon kuin luovutettaessa.<br>
       </p>
     </div>
 
@@ -615,7 +617,7 @@ Henkilötietoja säilytetään myös Formspree-palvelussa, joka toimii kolmannen
 
       document.getElementById("tulos").innerHTML =
   "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " €<br>" +
-  "<strong>Hinta yhteensä: " + hinta + " € (sis. ALV 25.5 %)</strong><br>" +
+  "<strong>Hinta yhteensä: " + hinta + " € (sis. ALV 25,5 %)</strong><br>" +
   "Laskettu hinta on arvio. Vahvistamme hinnan lähettämässämme laskussa.";
 
     }
