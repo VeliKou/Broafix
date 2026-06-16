@@ -456,7 +456,7 @@
   <input type="checkbox" id="km_paketti" onchange="laskeHinta()">
   <label for="km_paketti">
     <strong>Kilometripaketti (polttoaine sisältyy)</strong><br>
-    10 € + 4 € / 10 km<br>
+    3 € / 10 km<br>
     ✔ Ei tankkausta<br>
     ✔ Sisältää uusiutuvan MYdieselin
   </label>
@@ -491,7 +491,6 @@
       <p class="muted">
         <strong>Tärkeät tiedot lyhyesti:</strong><br>
         Varaus vahvistetaan erikseen. Maksu ennen luovutusta. Lasku lähetetään sähköpostitse.<br>
-        Sopimukseen kuuluu 100 km / vrk. Ylimenevistä kilometreistä veloitetaan 0,20 € / km. Polttoaine ei kuulu hintaan, palautetaan tankki täynnä.<br>
         Tiedustelut, lyhyemmät/pidemmät vuokraukset ja muut palautus-/luovutusajat: vuokrauskarjalohja@broafix.com
       </p>
     </div>
@@ -640,7 +639,7 @@ function laskeHinta() {
 
   // ✅ kilometripaketti laskenta
   if (kmValittu) {
-    kmHinta = 10 + (km * 0.4);
+    kmHinta = km * 0.3
   }
 
   const kokonais = vuokraHinta + kmHinta;
