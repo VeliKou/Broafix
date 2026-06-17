@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vuokraa pakettiauto Karjalohja - 45€ / vrk - Volkswagen Transporter | Broafix</title>
 
-<meta name="description" content="Vuokraa pakettiauto Karjalohjalla edullisesti. Edullinen Volkswagen Transporter vuokralle muuttoon ja kuljetukseen. Varaa helposti.">
+<meta name="description" content="Vuokraa pakettiauto Karjalohjalla edullisesti. Volkswagen Transporter 45 € / vrk muuttoon ja kuljetukseen. Tarkista vapaat ajat ja varaa helposti.">
   
 <meta name="author" content="Broafix Oy">
 <meta name="date" content="2026-01-01">
@@ -499,6 +499,7 @@ Sis. 100 km / vrk · Ylimenevät 0,10 € / km · Polttoaine ei sisälly · Sis.
     <a 
       href="https://www.google.com/maps/search/?api=1&query=Sakkolan+Kylätie+424+Karjalohja"
       target="_blank"
+      rel="noopener noreferrer"
       style="color:white; background:#2563eb; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:bold;">
       Avaa Google Mapsissa
     </a>
@@ -618,7 +619,7 @@ Henkilötietoja säilytetään myös Formspree-palvelussa, joka toimii kolmannen
         return;
       }
 
-      const paivat = Math.ceil(ero / (1000 * 60 * 60 * 24));
+      const paivat = Math.max(1, Math.ceil(ero / (1000 * 60 * 60 * 24)));
       const alennus = Math.floor(paivat / 2) * 5;
       const hinta = (paivat * 45) - alennus;
 
