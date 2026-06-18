@@ -19,7 +19,41 @@
   
   <!-- 🔧 MUUTOS 18.6.2026: favicon -->
   <link rel="icon" href="favicon.ico">
-  
+
+<!-- 🔧 MUUTOS 18.6.2026: Structured data (Product + LocalBusiness) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Volkswagen Transporter pakettiauto vuokraus Karjalohja",
+  "image": "https://broafix.com/transporter4-etu.jpg",
+  "description": "Vuokraa pakettiauto Karjalohjalla edullisesti. Volkswagen Transporter 45€ / vrk.",
+  "offers": {
+    "@type": "Offer",
+    "price": "45",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Broafix Oy",
+  "image": "https://broafix.com/transporter4-etu.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Sakkolan Kylätie 424",
+    "addressLocality": "Karjalohja",
+    "postalCode": "09120",
+    "addressCountry": "FI"
+  },
+  "url": "https://broafix.com"
+}
+</script>
+
 
   <style>
     :root {
@@ -42,7 +76,7 @@
 
     iframe {
       width: 100%;
-      height: 600px;
+      height: 500px;
       border: 0;
       border-radius: 10px;
     }
@@ -328,7 +362,8 @@
 
   <div class="top-buttons">
     <a href="index.html" class="top-button">🏠 Etusivulle</a>
-    <a href="javascript:history.back()" class="top-button">← Edellinen sivu</a>
+    <a href="karjalohja.html" class="top-button">← Edellinen sivu</a>
+  
   </div>
 
   <div class="container">
@@ -366,7 +401,7 @@ Sis. 100 km / vrk · Ylimenevät 0,10 € / km · Polttoaine ei sisälly · Sis.
       </div>
 
       <div class="hero-image">
-        <img src="transporter4-etu.jpg" alt="Pakettiauto vuokraus Karjalohja Volkswagen Transporter" />
+        <img src="transporter4-etu.jpg" alt="Pakettiauto vuokraus Karjalohja Volkswagen Transporter Broafix" />
       </div>
     </div>
 
