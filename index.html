@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="fi-FI">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,8 @@
   
   <meta name="description" content="Vuokraa pakettiauto tai henkilöauto edullisesti Karjalohjalla ja Kuopiossa. Hyvin huolletut autot – nopea varaus.">
 
+  <link rel="canonical" href="https://broafix.com/">
+  
     <!-- Open Graph -->
   <meta property="og:title" content="Autovuokraus Karjalohja & Kuopio – Broafix">
   <meta property="og:description" content="Edullinen autonvuokraus Karjalohjalla ja Kuopiossa. Vuokraa helposti ja nopeasti.">
@@ -165,6 +167,66 @@
       }
     }
   </style>
+
+  
+<!-- Structured Data (Google korjaus) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Autovuokraus Karjalohja ja Kuopio",
+  "description": "Edullinen autonvuokraus Karjalohjalla ja Kuopiossa. Vuokraa henkilöauto tai pakettiauto nopeasti.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Broafix Oy",
+    "url": "https://broafix.com",
+    "logo": "https://broafix.com/Broafix_logo2.jpg"
+  },
+  "areaServed": [
+    {
+      "@type": "Place",
+      "name": "Karjalohja"
+    },
+    {
+      "@type": "Place",
+      "name": "Kuopio"
+    }
+  ],
+  "brand": {
+    "@type": "Brand",
+    "name": "Broafix"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://broafix.com",
+    "sku": "CAR-RENTAL-001",
+
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "EUR"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "FI"
+      }
+    },
+
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "FI",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnMethod": "https://schema.org/ReturnByMail"
+    }
+  }
+}
+</script>
+  
 </head>
 
 <body>
