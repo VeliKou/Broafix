@@ -479,7 +479,12 @@ Peräkoukku: Jarrullinen vetokyky 1620 kg · Jarruton 700 kg
         <label for="message">Lisätiedot</label>
         <textarea id="message" name="message" placeholder="Lisätiedot..."></textarea>
 
-        <input type="hidden" name="_subject" value="Uusi varauspyyntö - Volkswagen Transporter 1999">
+        <input type="hidden" name="_subject" value="Uusi varauspyyntö - Volkswagen Transporter 1999 FEI-676">
+
+          <!-- Muutos 21.6.2026: Lisätään sivulla laskettu hinta lomakkeelle -->
+        <input type="hidden" id="final_price" name="price">
+
+        <input type="hidden" id="days" name="days">
 
         <div class="checkbox-row">
           <input type="checkbox" id="termsAccepted" name="terms_accepted" value="Kyllä" required>
@@ -488,7 +493,8 @@ Peräkoukku: Jarrullinen vetokyky 1620 kg · Jarruton 700 kg
           </label>
         </div>
 
-        <button type="submit">Lähetä varauspyyntö</button>
+         <!-- Muutos 21.6.2026: Lisätään sivulla laskettu hinta lomakkeelle -->
+        <button type="submit" onclick="laskeHinta()">Lähetä varauspyyntö</button>
       </form>
 
 
@@ -643,6 +649,9 @@ Henkilötietoja säilytetään myös Formspree-palvelussa, joka toimii kolmannen
       const paivat = Math.max(1, Math.ceil(ero / (1000 * 60 * 60 * 24)));
       const alennus = Math.floor(paivat / 2) * 5;
       const hinta = (paivat * 45) - alennus;
+
+      document.getElementById("final_price").value = hinta;
+      document.getElementById("days").value = paivat;
 
       document.getElementById("tulos").innerHTML =
   "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " €<br>" +
