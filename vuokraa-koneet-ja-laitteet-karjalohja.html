@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vuokraa koneet ja laitteet Karjalohja | Broafix</title>
+
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  <link rel="icon" href="favicon.ico">
+
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --card: #ffffff;
+      --text: #222;
+      --muted: #555;
+      --border: #dddddd;
+      --green: #2c7a2c;
+      --green-dark: #256b25;
+      --blue: #2563eb;
+      --blue-dark: #1e40af;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 24px 20px 40px;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-top: 8px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 22px;
+      margin-bottom: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .company-id,
+    .footer-company {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .company-id {
+      margin: 0 0 18px 0;
+    }
+
+    .footer-company {
+      margin-top: 10px;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 320px;
+    }
+
+    .hero-text p {
+      margin: 0 0 10px 0;
+    }
+
+    .hero-image {
+      flex: 0 0 170px;
+      text-align: right;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 160px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      margin-left: auto;
+      box-shadow: var(--shadow);
+    }
+
+    .muted {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.5;
+      margin-top: 16px;
+    }
+
+    form label {
+      display: block;
+      margin-top: 12px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+      width: 100%;
+      padding: 10px 12px;
+      margin-top: 6px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: var(--green);
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 16px;
+    }
+
+    button:hover {
+      background-color: var(--green-dark);
+    }
+
+    .result {
+      margin-top: 12px;
+      font-weight: bold;
+      color: var(--green);
+      line-height: 1.5;
+    }
+
+    .top-buttons {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .top-button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+      font-size: 14px;
+    }
+
+    .top-button:hover {
+      background: var(--green-dark);
+    }
+
+    .checkbox-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 14px;
+      padding: 12px;
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      background: #fafafa;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: auto;
+      margin-top: 2px;
+      transform: scale(1.1);
+    }
+
+    .checkbox-row label {
+      width: 100%;
+      font-size: 13px;
+      line-height: 1.4;
+      cursor: pointer;
+      margin-top: 0;
+      font-weight: normal;
+    }
+
+    .checkbox-row a {
+      color: var(--green);
+      text-decoration: underline;
+    }
+
+    .laite-lista {
+      display: grid;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .laite-item {
+      display: grid;
+      grid-template-columns: 24px 1fr 100px;
+      gap: 12px;
+      align-items: center;
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      padding: 12px;
+      background: #fafafa;
+    }
+
+    .laite-item input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+      transform: scale(1.1);
+    }
+
+    .laite-info strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .laite-info small {
+      color: #555;
+      display: block;
+      line-height: 1.4;
+    }
+
+    .laite-maara label {
+      margin: 0 0 4px 0;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .laite-maara input {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .terms {
+      font-size: 11px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .terms h2 {
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    .terms h3 {
+      font-size: 13px;
+      margin: 14px 0 6px 0;
+    }
+
+    .terms ol {
+      padding-left: 18px;
+      margin: 8px 0;
+    }
+
+    .terms li {
+      margin: 6px 0;
+    }
+
+    @media (max-width: 640px) {
+      .top-buttons {
+        left: 15px;
+        right: 15px;
+        justify-content: space-between;
+      }
+
+      .top-button {
+        font-size: 13px;
+        padding: 9px 12px;
+      }
+
+      .container {
+        padding-top: 78px;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-text,
+      .hero-image {
+        text-align: center;
+      }
+
+      .hero-image img {
+        margin: 0 auto;
+      }
+
+      .laite-item {
+        grid-template-columns: 24px 1fr;
+      }
+
+      .laite-maara {
+        grid-column: 2 / 3;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-buttons">
+    <a href="index.html" class="top-button">🏠 Etusivulle</a>
+    <a href="karjalohja.html" class="top-button">← Edellinen sivu</a>
+  </div>
+
+  <div class="container">
+    <h1>Vuokraa koneet ja laitteet Karjalohja</h1>
+    <p class="company-id">Broafix Oy · Y:3579719-5</p>
+
+    <div class="card hero">
+      <div class="hero-text">
+        <p><strong>Vältä turha uuden laitteen osto – vuokraa tarvitsemasi pienlaitteet edullisesti meiltä.</strong></p>
+        <p>Sopii pihatöihin, remonttiin, siivoukseen, kuljetukseen ja satunnaiseen tarpeeseen.</p>
+        <p>Valitse laitteet alta, syötä vuokra-aika ja lähetä varauspyyntö yhdellä lomakkeella.</p>
+        <p class="muted">
+          Saatavuus vahvistetaan erikseen sähköpostitse.<br>
+          Hinnat sisältävät ALV 25,5 %.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <img src="KuvaTulossa.png" alt="Pienlaitteiden kuva tulossa" />
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Valitse vuokrattavat laitteet</h2>
+      <p style="text-align:center; font-size:14px;">
+        Voit valita yhdellä kertaa useamman laitteen samaan vuokraukseen.
+      </p>
+
+      <div class="laite-lista">
+        <div class="laite-item">
+          <input type="checkbox" id="laite1" class="laite-checkbox" data-name="Painepesuri" data-price="20" onchange="laskeHinta()">
+          <div class="laite-info">
+            <strong>Painepesuri – 20 € / vrk</strong>
+            <small>Esim. pihan, terassin ja ajoneuvojen pesuun.</small>
+          </div>
+          <div class="laite-maara">
+            <label for="qty1">Määrä</label>
+            <input type="number" id="qty1" min="1" value="1" onchange="laskeHinta()">
+          </div>
+        </div>
+
+        <div class="laite-item">
+          <input type="checkbox" id="laite2" class="laite-checkbox" data-name="Aggregaatti" data-price="25" onchange="laskeHinta()">
+          <div class="laite-info">
+            <strong>Aggregaatti – 25 € / vrk</strong>
+            <small>Tilapäiseen sähköntarpeeseen.</small>
+          </div>
+          <div class="laite-maara">
+            <label for="qty2">Määrä</label>
+            <input type="number" id="qty2" min="1" value="1" onchange="laskeHinta()">
+          </div>
+        </div>
+
+        <div class="laite-item">
+          <input type="checkbox" id="laite3" class="laite-checkbox" data-name="Tärylevy" data-price="30" onchange="laskeHinta()">
+          <div class="laite-info">
+            <strong>Tärylevy – 30 € / vrk</strong>
+            <small>Pihapohjien ja täyttöjen tiivistykseen.</small>
+          </div>
+          <div class="laite-maara">
+            <label for="qty3">Määrä</label>
+            <input type="number" id="qty3" min="1" value="1" onchange="laskeHinta()">
+          </div>
+        </div>
+
+        <div class="laite-item">
+          <input type="checkbox" id="laite4" class="laite-checkbox" data-name="Betonimylly" data-price="20" onchange="laskeHinta()">
+          <div class="laite-info">
+            <strong>Betonimylly – 20 € / vrk</strong>
+            <small>Pieniin valu- ja muuriprojekteihin.</small>
+          </div>
+          <div class="laite-maara">
+            <label for="qty4">Määrä</label>
+            <input type="number" id="qty4" min="1" value="1" onchange="laskeHinta()">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Tee varaus</h2>
+
+      <form action="https://formspree.io/f/xykveewp" method="POST" onsubmit="laskeHinta()">
+        <label for="name">Nimi*</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Puhelin*</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="email">Sähköposti*</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Osoite</label>
+        <input type="text" id="address" name="address">
+
+        <label for="start">Aloituspäivä*</label>
+        <input type="date" id="start" name="start_date" onchange="laskeHinta()" required>
+
+        <label for="start_time">Luovutusaika (16–20)*</label>
+        <input
+          type="time"
+          id="start_time"
+          name="start_time"
+          min="16:00"
+          max="20:00"
+          value="17:00"
+          onchange="laskeHinta()"
+          required>
+
+        <label for="end">Lopetuspäivä*</label>
+        <input type="date" id="end" name="end_date" onchange="laskeHinta()" required>
+
+        <label for="end_time">Palautusaika (9–16)*</label>
+        <input
+          type="time"
+          id="end_time"
+          name="end_time"
+          min="09:00"
+          max="16:00"
+          value="15:00"
+          onchange="laskeHinta()"
+          required>
+
+        <div class="result" id="tulos"></div>
+
+        <label for="message">Lisätiedot</label>
+        <textarea id="message" name="message" placeholder="Lisätiedot, toiveet, lisäkysymykset..."></textarea>
+
+        <input type="hidden" id="selected_devices" name="selected_devices">
+        <input type="hidden" id="final_price" name="price">
+        <input type="hidden" id="days" name="days">
+        <input type="hidden" name="_subject" value="Uusi varauspyyntö - pienlaitteet">
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="termsAccepted" name="terms_accepted" value="Kyllä" required>
+          <label for="termsAccepted">
+            Olen lukenut ja hyväksyn <a href="#vuokrausehdot">vuokrausehdot</a>.
+                </div>
+
+        <button type="submit">Lähetä varauspyyntö</button>
+      </form>
+
+      <p class="muted">
+        <strong>Tärkeät tiedot lyhyesti:</strong><br>
+        Varaus vahvistetaan erikseen. Maksu ennen luovutusta. Lasku lähetetään sähköpostitse.<br>
+        Saatavuus vahvistetaan erikseen.<br>
+        Tiedustelut: vuokrauskarjalohja@broafix.com
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Noutopaikka – Karjalohja</h2>
+
+      <p style="text-align:center; font-size:14px;">
+        Laitteet noudetaan osoitteesta:<br>
+        Sakkolan Kylätie 424, 09120 Karjalohja
+      </p>
+
+      <iframe
+        title="Pienlaitteiden noutopaikka kartalla"
+        src="https://www.google.com/maps?q=Sakkolan%20Kylätie%20424%2009120%20Karjalohja&amp;output=embed"
+        loading="lazy">
+      </iframe>
+
+      <div style="text-align:center; margin-top:10px;">
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=Sakkolan+Kylätie+424+Karjalohja"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="color:white; background:#2563eb; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:bold;">
+          Avaa Google Mapsissa
+        </a>
+      </div>
+    </div>
+
+    <div class="card terms" id="vuokrausehdot">
+      <h2>VUOKRAUSEHDOT</h2>
+      <ol>
+        <li>
+          <h3>Varauksen vahvistaminen</h3>
+          <ol>
+            <li>Varaus vahvistetaan erikseen sähköpostitse.</li>
+            <li>Vuokrasopimus syntyy, kun varaus on vahvistettu ja sovittu maksu on maksettu.</li>
+          </ol>
+        </li>
+
+        <li>
+          <h3>Laitteiden käyttö</h3>
+          <ol>
+            <li>Vuokraaja sitoutuu käyttämään laitteita huolellisesti ja vain niiden tavanomaiseen käyttötarkoitukseen.</li>
+            <li>Laitteita ei saa luovuttaa kolmannelle osapuolelle ilman vuokranantajan etukäteistä lupaa.</li>
+            <li>Vuokraaja vastaa käyttöohjeiden noudattamisesta.</li>
+          </ol>
+        </li>
+
+        <li>
+          <h3>Vahingot ja vastuu</h3>
+          <ol>
+            <li>Vuokraaja on velvollinen ilmoittamaan viipymättä vahingosta, rikkoutumisesta tai puutteesta.</li>
+            <li>Vuokraaja vastaa laitteiden huolimattomasta, väärästä tai käyttöehtojen vastaisesta käytöstä aiheutuneista vahingoista.</li>
+          </ol>
+        </li>
+
+        <li>
+          <h3>Palautus</h3>
+          <ol>
+            <li>Laitteet palautetaan sovittuna aikana ja sovitussa kunnossa.</li>
+            <li>Poikkeuksellisesta likaantumisesta voidaan veloittaa puhdistusmaksu.</li>
+            <li>Myöhästymisestä voidaan veloittaa lisämaksu.</li>
+          </ol>
+        </li>
+
+        <li>
+          <h3>Tietosuoja</h3>
+          Rekisterinpitäjä: Broafix Oy (Y-tunnus 3579719-5), yhteys: vuokrauskarjalohja@broafix.com.
+          Käsittelemme vuokraajan henkilötietoja varauksen toteuttamiseksi, laskutusta varten sekä mahdollisten vahinko- ja riita-asioiden selvittämiseksi.
+        </li>
+      </ol>
+    </div>
+
+    <p class="footer-company">
+      © 2026 Broafix Oy · Y:3579719-5
+    </p>
+  </div>
+
+  <script>
+    function laskeHinta() {
+      const alkuPvm = document.getElementById("start").value;
+      const loppuPvm = document.getElementById("end").value;
+      const alkuAika = document.getElementById("start_time").value;
+      const loppuAika = document.getElementById("end_time").value;
+
+      const checkboxes = document.querySelectorAll(".laite-checkbox");
+      let laitteet = [];
+      let laitePaivaSumma = 0;
+
+      checkboxes.forEach((cb, index) => {
+        const qty = document.getElementById("qty" + (index + 1)).value;
+        const maara = Math.max(1, parseInt(qty || "1", 10));
+
+        if (cb.checked) {
+          const nimi = cb.dataset.name;
+          const hinta = parseFloat(cb.dataset.price);
+          laitteet.push(nimi + " x" + maara);
+          laitePaivaSumma += hinta * maara;
+        }
+      });
+
+      document.getElementById("selected_devices").value = laitteet.join(", ");
+
+      if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika || laitteet.length === 0) {
+        document.getElementById("tulos").innerHTML = "Valitse vähintään yksi laite sekä vuokra-aika.";
+        document.getElementById("final_price").value = "";
+        document.getElementById("days").value = "";
+        return;
+      }
+
+      const alku = new Date(alkuPvm + "T" + alkuAika);
+      const loppu = new Date(loppuPvm + "T" + loppuAika);
+      const ero = loppu - alku;
+
+      if (ero <= 0) {
+        document.getElementById("tulos").innerText = "Tarkista päivämäärät ja kellonajat";
+        document.getElementById("final_price").value = "";
+        document.getElementById("days").value = "";
+        return;
+      }
+
+      const paivat = Math.max(1, Math.ceil(ero / (1000 * 60 * 60 * 24)));
+      const hinta = laitePaivaSumma * paivat;
+
+      document.getElementById("final_price").value = hinta;
+      document.getElementById("days").value = paivat;
+
+      document.getElementById("tulos").innerHTML =
+        "Valitut laitteet: " + laitteet.join(", ") + "<br>" +
+        "Vuokra-aika: " + paivat + " päivää<br>" +
+        "<strong>Arvioitu hinta yhteensä: " + hinta + " € (sis. ALV 25,5 %)</strong><br>" +
+        "Saatavuus ja lopullinen hinta vahvistetaan erikseen.";
+    }
+  </script>
+
+  <script data-goatcounter="https://broafix.goatcounter.com/count"
+    async src="//gc.zgo.at/count.js"></script
