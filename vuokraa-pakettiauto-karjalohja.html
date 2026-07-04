@@ -622,42 +622,66 @@ Henkilötietoja säilytetään myös Formspree-palvelussa, joka toimii kolmannen
 </p>
 
   </div>
+ 
+<script>
+function laskeHinta() {
+  const alkuPvm = document.getElementById("start").value;
+  const loppuPvm = document.getElementById("end").value;
+  const alkuAika = document.getElementById("start_time").value;
+  const loppuAika = document.getElementById("end_time").value;
 
-  <script>
-    function laskeHinta() {
-      const alkuPvm = document.getElementById("start").value;
-      const loppuPvm = document.getElementById("end").value;
-      const alkuAika = document.getElementById("start_time").value;
-      const loppuAika = document.getElementById("end_time").value;
+  if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) {
+    document.getElementById("tulos").innerHTML = "";
+    document.getElementById("final_price").value = "";
+    document.getElementById("days").value = "";
+    return;
+  }
 
-      if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) {
-        document.getElementById("tulos").innerHTML = "";
-        return;
-      }
+  const alku = new Date(alkuPvm + "T" + alkuAika);
+  const loppu = new Date(loppuPvm + "T" + loppuAika);
+  const ero = loppu - alku;
 
-      const alku = new Date(alkuPvm + "T" + alkuAika);
-      const loppu = new Date(loppuPvm + "T" + loppuAika);
-      const ero = loppu - alku;
+  if (ero <= 0) {
+    document.getElementById("tulos").innerText = "Tarkista päivämäärät ja kellonajat";
+    document.getElementById("final_price").value = "";
+    document.getElementById("days").value = "";
+    return;
+  }
 
-      if (ero <= 0) {
-        document.getElementById("tulos").innerText = "Tarkista päivämäärät ja kellonajat";
-        return;
-      }
+  const paivat = Math.max(1, Math.ceil(ero / (1000 * 60 * 60 * 24)));
 
-      const paivat = Math.max(1, Math.ceil(ero / (1000 * 60 * 60 * 24)));
-      const alennus = Math.floor(paivat / 2) * 5;
-      const hinta = (paivat * 45) - alennus;
+  const normaaliPaivaHinta = 45;
+  const minPaivaHinta = 15;
 
-      document.getElementById("final_price").value = hinta;
-      document.getElementById("days").value = paivat;
+  let hinta = 0;
 
-      document.getElementById("tulos").innerHTML =
-  "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " €<br>" +
-  "<strong>Hinta yhteensä: " + hinta + " € (sis. ALV 25,5 %)</strong><br>" +
-  "Laskettu hinta on arvio. Vahvistamme hinnan lähettämässämme laskussa.";
+  for (let paiva = 1; paiva <= paivat; paiva++) {
+    let paivaHinta;
 
+    if (paiva === 1) {
+      paivaHinta = normaaliPaivaHinta;
+    } else {
+      // -5 € / 2 vrk, mutta minimihinta 15 € / vrk
+      // pv 2-3 = 40 €, pv 4-5 = 35 €, pv 6-7 = 30 €, jne.
+      const alennusJakso = Math.floor((paiva - 2) / 2) + 1;
+      paivaHinta = Math.max(normaaliPaivaHinta - (alennusJakso * 5), minPaivaHinta);
     }
-  </script>
+
+    hinta += paivaHinta;
+  }
+
+  const normaalihinta = paivat * normaaliPaivaHinta;
+  const alennus = normaalihinta - hinta;
+
+  document.getElementById("final_price").value = hinta;
+  document.getElementById("days").value = paivat;
+
+  document.getElementById("tulos").innerHTML =
+    "Vuokra-aika: " + paivat + " päivää | Alennus: " + alennus + " €<br>" +
+    "<strong>Hinta yhteensä: " + hinta + " € (sis. ALV 25,5 %)</strong><br>" +
+    "Laskettu hinta on arvio. Vahvistamme hinnan lähettämässämme laskussa.";
+}
+</script>
 
   <!-- GoatCounter kävijälaskuri (anonyymi, ei evästeitä) -->
   <script data-goatcounter="https://broafix.goatcounter.com/count"
