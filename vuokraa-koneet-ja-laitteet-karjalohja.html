@@ -199,13 +199,16 @@ iframe {
 <label for="email">Sähköposti*</label>
 <input type="email" id="email" name="email" required>
 
-<label>Aloituspäivä*</label>
+<label for="address">Osoite</label>
+<input type="text" id="address" name="address">
+
+        <label for="start">Aloituspäivä*</label>
 <input type="date" id="start" name="start_date" required onchange="laskeHinta()">
  
 <label>Luovutusaika (16–20)*</label>
 <input type="time" id="start_time" name="start_time" min="16:00" max="20:00" value="17:00" required onchange="laskeHinta()">
 
-<label>Lopetuspäivä*</label>
+        <label for="end">Lopetuspäivä*</label>
 <input type="date" id="end" name="end_date" required onchange="laskeHinta()">
 
 <label>Palautusaika (9–16)*</label>
@@ -221,9 +224,9 @@ iframe {
 <div style="margin-top:15px;">
   <input type="checkbox" id="termsAccepted" name="terms_accepted" value="Kyllä" required>
   <label for="termsAccepted">
-    Hyväksyn <a href="#ehdot">vuokrause</label>
+    Olen lukenut ja hyväksyn <a href="#vuokrausehdot">vuokrausehdot</a>.
+  </label>
 </div>
-
 
 <button type="submit">Lähetä varaus</button>
 
@@ -235,20 +238,30 @@ Saatavuus ja varaus vahvistetaan erikseen sähköpostitse. Maksu ennen luovutust
 
 </div>
 
-<!-- NOUTO -->
+    <!-- ✅ SIJAINTI / KARTTA -->
 <div class="card">
-<h2>Noutopaikka</h2>
+  <h2>Noutopaikka – Karjalohja</h2>
 
-<p style="text-align:center;">
-Sakkolan Kylätie 424<br>
-09120 Karjalohja
-</p>
+  <p style="text-align:center; font-size:14px;">
+    Ajoneuvo sijaitsee osoitteessa:<br>
+    Sakkolan Kylätie 424, 09120 Karjalohja
+  </p>
 
-<iframe
-  src="https://www.google.com/maps?q=Sakkolan%20Kylätie%20424%20Karjalohja&output=embed"
-  title="Noutopaikka kartalla"
-  loading="lazy">
-</iframe>
+  <iframe 
+    src="https://www.google.com/maps?q=Sakkolan%20Kylätie%20424%2009120%20Karjalohja&output=embed"
+    loading="lazy">
+  </iframe>
+
+  <div style="text-align:center; margin-top:10px;">
+    <a 
+      href="https://www.google.com/maps/search/?api=1&query=Sakkolan+Kylätie+424+Karjalohja"
+      target="_blank"
+      rel="noopener noreferrer"
+      style="color:white; background:#2563eb; padding:10px 14px; border-radius:8px; text-decoration:none; font-weight:bold;">
+      Avaa Google Mapsissa
+    </a>
+  </div>
+</div>
 
 
 <!-- EHDOT -->
