@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vuokraa peräkärry Karjalohja – 15€ / vrk | Broafix</title>
+  <title>Vuokraa peräkärry Karjalohja – 10€ / vrk | Broafix</title>
 
 <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
 
   
-<!-- <meta name="description" content="Vuokraa peräkärry Karjalohjalla edullisesti. Jarruton peräkärry 15 € / vrk kuljetuksiin ja muuttoon. Varaa helposti."> -->
+<!-- <meta name="description" content="Vuokraa peräkärry Karjalohjalla edullisesti. Jarruton peräkärry 10 € / vrk kuljetuksiin ja muuttoon. Varaa helposti."> -->
  
 
   <link rel="icon" href="favicon.ico">
@@ -333,7 +333,7 @@
 
     <div class="card hero">
       <div class="hero-text">
-        <p class="price">15 € / vrk</p>      
+        <p class="price">10 € / vrk</p>      
 <p style="font-size:14px; color:#444; margin-top:8px;">
 Sis. ALV 25,5 %
 </p>
@@ -602,7 +602,7 @@ function laskeHinta() {
     let paivaHinta;
 
     if (paiva === 1) {
-      paivaHinta = 15;
+      paivaHinta = 10;
     } else {
       // -5 € / 2 vrk, mutta minimi 5 € / vrk
       // pv 2-3 = 10 €, pv 4-5 = 5 €, pv 6-7 = 5 €, jne.
@@ -613,7 +613,7 @@ function laskeHinta() {
     hinta += paivaHinta;
   }
 
-  const normaalihinta = paivat * 15;
+  const normaalihinta = paivat * 10;
   const alennus = normaalihinta - hinta;
 
   document.getElementById("final_price").value = hinta;
