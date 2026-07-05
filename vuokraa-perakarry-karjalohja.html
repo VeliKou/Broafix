@@ -603,10 +603,8 @@ function laskeHinta() {
     if (paiva === 1) {
       paivaHinta = 10;
     } else {
-      // -5 € / 2 vrk, mutta minimi 5 € / vrk
-      // pv 2-3 = 10 €, pv 4-5 = 5 €, pv 6-7 = 5 €, jne.
       const alennusJakso = Math.floor((paiva - 2) / 2) + 1;
-      paivaHinta = Math.max(15 - (alennusJakso * 5), 5);
+      paivaHinta = Math.max(10 - (alennusJakso * 5), 5);
     }
 
     hinta += paivaHinta;
