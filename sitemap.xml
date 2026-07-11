@@ -41,5 +41,13 @@
     <priority>0.8</priority>
   </url>
 
+    <!-- Karjalohja peräkärry -->
+  <url>
+    <loc>https://broafix.com/vuokraa-perakarry-karjalohja.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
 
