@@ -7,6 +7,11 @@
 
   
 <meta name="description" content="Vuokraa peräkärry Karjalohjalla edullisesti. Jarruton peräkärry 10 € / vrk kuljetuksiin ja muuttoon. Varaa helposti.">
+  
+<meta name="keywords" content="peräkärry vuokraus Karjalohja, peräkärry 10€">
+<meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://broafix.com/vuokraa-perakarry-karjalohja.html">
+
  
 
   <link rel="icon" href="favicon.ico">
@@ -379,16 +384,16 @@ Jarruton, kantavuus: 590kg
 
       <form action="https://formspree.io/f/xykveewp" method="POST">
         <label for="name">Nimi*</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" autocomplete="name" required>
 
         <label for="phone">Puhelin*</label>
-        <input type="tel" id="phone" name="phone" required>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" required>
 
         <label for="email">Sähköposti*</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" autocomplete="email" required>
 
         <label for="address">Osoite</label>
-        <input type="text" id="address" name="address">
+        <input type="text" id="address" name="address" autocomplete="street-address">
 
         <label for="start">Aloituspäivä*</label>
         <input type="date" id="start" name="start_date" onchange="laskeHinta()" required>
