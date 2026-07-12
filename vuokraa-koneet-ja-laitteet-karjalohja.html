@@ -16,6 +16,7 @@
   --card:#fff;
   --green:#2c7a2c;
   --green-dark:#256b25;
+  --muted:#555;
 }
 
 body {
@@ -174,7 +175,11 @@ iframe {
 }
   
 .laite input[type="checkbox"] {
-  transform: scale(1.4);
+  width: auto;
+  margin-top: 10px;
+  padding: 0;
+  border: none;
+  transform: scale(1.4); 
 }
 
     .checkbox-row {
@@ -360,7 +365,7 @@ Pieni paikallinen toimija Karjalohjalla. Tavoitteena on tarjota helposti saatavi
 <div class="card">
 <h2>Tee varaus</h2>
 
-<form action="https://formspree.io/f/xykveewp" method="POST" onsubmit="return ennenLahetysta()">
+<form action="https://formspree.io/f/xykveewp" method="POST" onsubmit="laskeHinta()">
 
 <label for="name">Nimi*</label>
 <input type="text" id="name" name="name" required>
@@ -406,7 +411,7 @@ Pieni paikallinen toimija Karjalohjalla. Tavoitteena on tarjota helposti saatavi
   </label>
 </div>
 
-<button type="submit">Lähetä varaus</button>
+        <button type="submit">Lähetä varauspyyntö</button>
 
 </form>
 
@@ -575,36 +580,15 @@ function laskeHinta() {
   document.getElementById("devices").value = lista.join(", ");
   document.getElementById("price").value = summa;
 
-  document.getElementById("tulos").innerHTML =
-    "Valitut: " + lista.join(", ") + "<br>" +
-    "Vuokra-aika: " + days + " päivää<br>" +
-    "<strong>Hinta: " + summa + " €</strong>";
+
+document.getElementById("tulos").innerHTML =
+  "Valitut: " + lista.join(", ") + "<br>" +
+  "Vuokra-aika: " + days + " päivää<br>" +
+  "<strong>Hinta: " + summa + " € (sis. ALV 25,5 %)</strong><br>" +
+  "Laskettu hinta on arvio. Vahvistamme hinnan lähettämässämme laskussa.";
+
 }
 
-function ennenLahetysta() {
-  laskeHinta();
-
-  const devices = document.getElementById("devices").value;
-  const price = document.getElementById("price").value;
-  const days = document.getElementById("days").value;
-
-  if (!devices) {
-    alert("Valitse vähintään yksi laite");
-    return false;
-  }
-
-  if (!days || Number(days) <= 0) {
-    alert("Vuokra-aikaa ei ole laskettu oikein");
-    return false;
-  }
-
-  if (!price || Number(price) <= 0) {
-    alert("Hinta ei ole laskettu oikein");
-    return false;
-  }
-
-  return true;
-}
 </script>
 
 
