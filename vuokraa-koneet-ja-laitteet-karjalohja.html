@@ -3,9 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Vuokraa koneet ja laitteet Karjalohja | Broafix</title>
 
+<meta name="description" content="Vuokraa koneet ja laitteet Karjalohjalla edullisesti. Painepesuri, kivipora, ilmakompressori, auton vikakoodin lukija jne...">
+
+  <link rel="canonical" href="https://broafix.com/vuokraa-koneet-ja-laitteet-karjalohja.html">
+  <meta name="robots" content="index, follow">
+  
 <style>
 :root {
   --bg:#f5f5f5;
@@ -42,16 +46,9 @@ h1,h2 { text-align:center; }
   gap:16px;
 }
 
-.laite {
-  border:1px solid #ddd;
-  border-radius:10px;
-  overflow:hidden;
-  background:#fff;
-}
-
 .laite img {
   width:100%;
-  height:180px;
+  height:100px;
   object-fit:cover;
 }
 
@@ -101,14 +98,79 @@ iframe {
   border:0;
   border-radius:10px;
 }
+    .top-buttons {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .top-button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+      font-size: 14px;
+    }
+
+    .top-button:hover {
+      background: var(--green-dark);
+    }
+        .top-button {
+        font-size: 13px;
+        padding: 9px 12px;
+      }
+
+    .company-id,
+    .footer-company {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .company-id {
+      margin: 0 0 18px 0;
+    }
+
+.laite {
+  display: flex;
+  gap: 15px;
+  border: 2px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  align-items: center;
+  transition: 0.2s;
+  background: #fff;
+}
+
+.laite:hover {
+  border-color: #007bff;
+}
+
+  
 </style>
 </head>
 
 <body>
+  
+  <div class="top-buttons">
+    <a href="index.html" class="top-button">🏠 Etusivulle</a>
+    <a href="karjalohja.html" class="top-button">← Edellinen sivu</a>
+  
+  </div>
 
 <div class="container">
 
 <h1>Vuokraa koneet ja laitteet Karjalohja</h1>
+      <p class="company-id">Broafix Oy · Y:3579719-5</p>
 
 <!-- LAITTEET -->
 <div class="card">
@@ -116,14 +178,45 @@ iframe {
 
 <div class="laite-lista">
 
-<div class="laite">
+<label class="laite">
 <img src="KuvaTulossa.png" alt="Kuva tulossa">
 <div class="laite-content">
 <h3>Painepesuri – 10 € / vrk</h3>
-<input type="checkbox" name="device_options" value="Painepesuri" data-price="10" onchange="laskeHinta()">
+ <p class="laite-info">
+          Tehokas painepesuri pihojen, autojen ja terassien puhdistukseen.
+          Sisältää perussuuttimen ja letkun.
+        </p> 
+  <input type="checkbox" name="device_options" value="Painepesuri" data-price="10" onchange="laskeHinta()">
+</div>
+</label>
+  
+<label class="laite">
+  <input type="checkbox" name="device_options" value="Kivipora" data-price="10" onchange="laskeHinta()">
+<img src="KuvaTulossa.png" alt="Kuva tulossa">
+<div class="laite-content">
+<h3>Kivipora – 10 € / vrk</h3>
+
+</div>
+</label>
+  
+
+<div class="laite">
+<img src="KuvaTulossa.png" alt="Kuva tulossa">
+<div class="laite-content">
+<h3>Auton vikakoodinlukija – 15 € / vrk</h3>
+<input type="checkbox" name="device_options" value="Vikakoodinlukija" data-price="15" onchange="laskeHinta()">
 </div>
 </div>
 
+<div class="laite">
+<img src="KuvaTulossa.png" alt="Kuva tulossa">
+<div class="laite-content">
+<h3>Ilmakompressori – 10 € / vrk</h3>
+<input type="checkbox" name="device_options" value="Kompressori" data-price="10" onchange="laskeHinta()">
+</div>
+</div>
+
+ <!-- Lisää myöhemmin...
 <div class="laite">
 <img src="KuvaTulossa.png" alt="Kuva tulossa">
 <div class="laite-content">
@@ -152,35 +245,12 @@ iframe {
 <div class="laite">
 <img src="KuvaTulossa.png" alt="Kuva tulossa">
 <div class="laite-content">
-<h3>Kivipora – 10 € / vrk</h3>
-<input type="checkbox" name="device_options" value="Kivipora" data-price="10" onchange="laskeHinta()">
-</div>
-</div>
-
-<div class="laite">
-<img src="KuvaTulossa.png" alt="Kuva tulossa">
-<div class="laite-content">
-<h3>Auton vikakoodinlukija – 15 € / vrk</h3>
-<input type="checkbox" name="device_options" value="Vikakoodinlukija" data-price="15" onchange="laskeHinta()">
-</div>
-</div>
-
-<div class="laite">
-<img src="KuvaTulossa.png" alt="Kuva tulossa">
-<div class="laite-content">
 <h3>Klapikone – 10 € / vrk</h3>
 <input type="checkbox" name="device_options" value="Klapikone" data-price="10" onchange="laskeHinta()">
 </div>
 </div>
-
-<div class="laite">
-<img src="KuvaTulossa.png" alt="Kuva tulossa">
-<div class="laite-content">
-<h3>Ilmakompressori – 10 € / vrk</h3>
-<input type="checkbox" name="device_options" value="Kompressori" data-price="10" onchange="laskeHinta()">
-</div>
-</div>
-
+-->
+  
 </div>
 </div>
 
@@ -233,7 +303,8 @@ iframe {
 </form>
 
 <p style="font-size:13px;">
-Saatavuus ja varaus vahvistetaan erikseen sähköpostitse. Maksu ennen luovutusta.
+Varaus vahvistetaan erikseen. Maksu ennen luovutusta. Lasku lähetetään sähköpostitse.<br>
+Tiedustelut, lyhyemmät/pidemmät vuokraukset ja muut palautus-/luovutusajat: vuokrauskarjalohja@broafix.com<br>
 </p>
 
 </div>
@@ -265,53 +336,78 @@ Saatavuus ja varaus vahvistetaan erikseen sähköpostitse. Maksu ennen luovutust
 
 
 <!-- EHDOT -->
-<div class="card" id="ehdot">
+<div class="card" id="vuokrausehdot">
 <h2>Vuokrausehdot</h2>
+    <ol>
+        <li>
+          <h3>Vuokrasopimuksen syntyminen ja vuokraushinnan maksaminen</h3>
+          <ol>
+            <li>Tämä vuokrasopimus Vuokraajan ja Vuokranantajan välille syntyy ja tulee osapuolia oikeudellisesti sitovaksi, kun varaus on vahvistettu ja sovittu maksu on maksettu.</li>
+          </ol>
+        </li>
 
-<ol>
+        <li>
+          <h3>Vuokrauskohteen luovutus</h3>
+          <ol>
+            <li>Vuokraajan tulee huolellisesti tarkistaa laite ennen vuokrauksen aloittamista ja ilmoittaa Vuokranantajalle puutteet ja vauriot, joita ei ole ilmoitettu Vuokranantajan ylläpitämässä kuvauksessa.</li>
+          </ol>
+        </li>
 
-<li>
-<strong>Varauksen vahvistus</strong>
-<ul>
-<li>Varaus vahvistetaan sähköpostilla.</li>
-<li>Sopimus syntyy maksun jälkeen.</li>
-</ul>
-</li>
+        <li>
+          <h3>Vuokrauskohteen käyttö</h3>
+          <ol>
+            <li>Vuokraaja on velvollinen huolehtimaan laitteesta yhtä hyvin kuin omastaan sekä noudattamaan käytössä erityistä huolellisuutta ja varovaisuutta. Vuokraaja sitoutuu käyttämään laitetta vain sille tarkoitetulla tavanomaisella tavalla.</li>
+          </ol>
+        </li>
 
-<li>
-<strong>Käyttö</strong>
-<ul>
-<li>Käytä laitetta oikein ja huolellisesti.</li>
-<li>Ei jälleenvuokrausta.</li>
-</ul>
-</li>
+        <li>
+          <h3>Vuokraajan vastuu ja velvollisuudet</h3>
+          <ol>
+            <li>Vuokraaja on velvollinen suorittamaan Vuokranantajalle vuokrahinnan lisäksi mahdolliset sopimuksen mukaiset lisämaksut.</li>
+            <li>Vuokraajan on välittömästi ilmoitettava Vuokranantajalle laitteessa ilmenneestä virheestä tai sitä kohdanneesta vahingosta, varkaudesta tai luvattomasta käytöstä. Varkaudesta ja luvattomasta käytöstä on tehtävä viipymättä ilmoitus poliisille. Vuokranantajan on tämän jälkeen ilmoitettava Vuokraajalle.</li>
+            <li>Vuokraaja on velvollinen korvaamaan Vuokranantajalle laitteesta vuokra-aikana kadonneet osat ja lisävarusteet sekä laitteen epätavanomaisesta likaantumisesta johtuvat siivous- ja puhdistuskustannukset.</li>
+            <li>Peruutus on tehtävä sähköpostilla tai tekstiviestillä. Yli 6 tuntia ennen vuokra-ajan alkua tehty peruutus on maksuton. Alle 6 tuntia ennen vuokra-ajan alkua tehdystä peruutuksesta sekä noutamatta jätetystä varauksesta veloitetaan yhden vuorokauden vuokrahinta.</li>
+          </ol>
+        </li>
 
-<li>
-<strong>Vahingot</strong>
-<ul>
-<li>Ilmoita heti.</li>
-<li>Vuokraaja vastaa virheellisestä käytöstä.</li>
-</ul>
-</li>
+        <li>
+          <h3>Vakuutus ja omavastuu</h3>
+          <ol>           
+            <li>Vuokraaja vastaa vuokra-aikana laitteelle aiheuttamistaan vahingoista todellisten korjaus- ja muiden välittömien kulujen mukaisesti kuitenkin enintään 200 euroon saakka vahinkotapahtumaa kohden.</li>
+            <li>Jos vahinko on aiheutunut tahallisesti, törkeällä huolimattomuudella tai muuten olennaisella sopimusrikkomuksella, Vuokraaja vastaa vahingosta täysimääräisesti.</li>
+            <li>Vuokraaja ei vastaa laitteen teknisestä viasta tai tavanomaisesta rikkoutumisesta, ellei vika tai rikkoutuminen ole aiheutunut vuokraajan toiminnasta, huolimattomuudesta tai laiminlyönnistä.</li>
+          </ol>
+        </li>
 
-<li>
-<strong>Palautus</strong>
-<ul>
-<li>Palauta ajallaan.</li>
-<li>Myöhästymisestä voidaan veloittaa.</li>
-</ul>
-</li>
+        <li>
+          <h3>Vuokrauskohteen palautus</h3>
+          <ol>
+            <li>Vuokraajan on palautettava ajoneuvo Vuokranantajalle sovittuna ajankohtana ja sovitussa paikassa. Myöhästymisestä veloitetaan 5 € / alkava tunti. Vuokranantajalla on oikeus veloittaa lisäksi seuraavan vuokrauksen mahdollinen menetys.</li>
+            <li>Vuokraaja on velvollinen ilmoittamaan välittömästi Vuokranantajalle, mikäli laitteen palautus uhkaa viivästyä.</li>
+            <li>Vuokraaja on velvollinen ilmoittamaan Vuokranantajalle laitteessa havaitsemansa puutteet, viat ja vauriot, jotka ovat tulleet vuokra-aikana.</li>
+          </ol>
+        </li>
 
-<li>
-<strong>Tietosuoja</strong>
-<p>
-Broafix Oy (Y:3579719-5)<br>
-vuokrauskarjalohja@broafix.com
-</p>
-</li>
+        <li>
+          <h3>Sopimuksen purkaminen</h3>
+          <ol>
+            <li>Vuokranantajalla on oikeus purkaa tämä sopimus välittömästi, jos käy ilmi, että Vuokraaja rikkoo olennaisesti tätä sopimusta tai että Vuokraaja ei Vuokranantajan perustellun arvion mukaan kykene käsittelemään ajoneuvoa asianmukaisesti. Vuokranantajan purkaessa sopimuksen Vuokraaja on velvollinen palauttamaan laitteen viivytyksettä Vuokranantajalle.</li>
+            <li>Vuokraajalla on oikeus purkaa tämä sopimus, mikäli Vuokraaja ei saa Vuokranantajasta johtuvasta syystä laitetta käyttöönsä sovitusti tai laite poikkeaa olennaisesti sovitusta.</li>
+            <li>Vuokranantaja tai Vuokraaja voi purkaa sopimuksen, mikäli laitteen käyttö estyy varkauden, luvattoman käyttöönoton tai Vuokranantajan vastuulla olevan teknisen vian tai muun virheen seurauksena.</li>
+          </ol>
+        </li>
 
-</ol>
-</div>
+        <li>
+          <h3>Tietosuoja</h3>
+Rekisterinpitäjä: Broafix Oy (Y-tunnus 3579719-5), yhteys: vuokrauskarjalohja@broafix.com.
+Käsittelemme vuokraajan henkilötietoja (nimi ja yhteystiedot) vuokrauksen toteuttamiseksi, laskutusta varten sekä mahdollisten vahinko- ja riita-asioiden selvittämiseksi.
+Vuokraukseen ja laskutukseen liittyviä asiakirjoja säilytetään kirjanpito- ja verotusvelvoitteiden mukaisesti. Muut tiedot poistetaan tai anonymisoidaan, kun niitä ei enää tarvita, ellei vahinko-, perintä- tai riita-asia edellytä pidempää säilytystä.
+Tietoja voidaan luovuttaa viranomaisille, vakuutusyhtiölle ja perintätoimistolle tarpeen mukaan.
+Rekisteröidyllä on oikeus saada pääsy omiin tietoihinsa sekä pyytää niiden oikaisua ja tehdä valitus tietosuojavaltuutetulle.
+Henkilötietoja säilytetään myös Formspree-palvelussa, joka toimii kolmannen osapuolen tietojenkäsittelijänä.
+        </li>
+      </ol>
+    </div>
 
 </div>
 
