@@ -177,6 +177,37 @@ iframe {
   transform: scale(1.4);
 }
 
+    .checkbox-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 14px;
+      padding: 12px;
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      background: #fafafa;
+    }
+
+    .checkbox-row input[type="checkbox"] {
+      width: auto;
+      margin-top: 2px;
+      transform: scale(1.1);
+    }
+
+    .checkbox-row label {
+      width: 100%;
+      font-size: 13px;
+      line-height: 1.4;
+      cursor: pointer;
+      margin-top: 0;
+      font-weight: normal;
+    }
+
+    .checkbox-row a {
+      color: var(--green);
+      text-decoration: underline;
+    }
+  
     .terms {
       font-size: 11px;
       line-height: 1.5;
@@ -362,7 +393,7 @@ Pieni paikallinen toimija Karjalohjalla. Tavoitteena on tarjota helposti saatavi
 <input type="hidden" name="price" id="price">
 
 
-<div style="margin-top:15px;">
+  <div class="checkbox-row">
   <input type="checkbox" id="termsAccepted" name="terms_accepted" value="Kyllä" required>
   <label for="termsAccepted">
     Olen lukenut ja hyväksyn <a href="#vuokrausehdot">vuokrausehdot</a>.
@@ -533,6 +564,9 @@ function laskeHinta() {
 }
 </script>
 
+    <!-- GoatCounter kävijälaskuri (anonyymi, ei evästeitä) -->
+  <script data-goatcounter="https://broafix.goatcounter.com/count"
+  async src="//gc.zgo.at/count.js"></script>
 
 </body>
 </html>
