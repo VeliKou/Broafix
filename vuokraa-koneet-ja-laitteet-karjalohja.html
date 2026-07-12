@@ -154,7 +154,10 @@ iframe {
 .laite:hover {
   border-color: #007bff;
 }
-
+  
+.laite input[type="checkbox"] {
+  transform: scale(1.4);
+}
   
 </style>
 </head>
@@ -183,38 +186,52 @@ iframe {
 <div class="laite-content">
 <h3>Painepesuri – 10 € / vrk</h3>
  <p class="laite-info">
-          Tehokas painepesuri pihojen, autojen ja terassien puhdistukseen.
+          Painepesuri pihojen, autojen ja terassien puhdistukseen.
           Sisältää perussuuttimen ja letkun.
+          Malli: Nilfisk C135.1
         </p> 
   <input type="checkbox" name="device_options" value="Painepesuri" data-price="10" onchange="laskeHinta()">
 </div>
 </label>
   
 <label class="laite">
-  <input type="checkbox" name="device_options" value="Kivipora" data-price="10" onchange="laskeHinta()">
-<img src="KuvaTulossa.png" alt="Kuva tulossa">
-<div class="laite-content">
+  <img src="KuvaTulossa.png" alt="Kuva tulossa">
+  <div class="laite-content">
 <h3>Kivipora – 10 € / vrk</h3>
+     <p class="laite-info">
+          Kivipora kivien ja betonin poraukseen.
+          Mukana kiviteriä ja talttoja.
+          Malli: Biltema 1500 SDS MAX
+        </p> 
+  <input type="checkbox" name="device_options" value="Kivipora" data-price="10" onchange="laskeHinta()">
 
 </div>
 </label>
   
-
-<div class="laite">
+<label class="laite">
 <img src="KuvaTulossa.png" alt="Kuva tulossa">
 <div class="laite-content">
-<h3>Auton vikakoodinlukija – 15 € / vrk</h3>
-<input type="checkbox" name="device_options" value="Vikakoodinlukija" data-price="15" onchange="laskeHinta()">
+<h3>Auton vikakoodinlukija – 10 € / vrk</h3>
+       <p class="laite-info">
+          Vikakoodin lukija. Kattaa useimmat autot.
+          Malli: Icarsoft CR PR0+ 
+        </p> 
+<input type="checkbox" name="device_options" value="Vikakoodinlukija" data-price="10" onchange="laskeHinta()">
 </div>
-</div>
+</label>
 
-<div class="laite">
+<label class="laite">
+  <input type="checkbox" name="device_options" value="Kompressori" data-price="10" onchange="laskeHinta()">
 <img src="KuvaTulossa.png" alt="Kuva tulossa">
 <div class="laite-content">
 <h3>Ilmakompressori – 10 € / vrk</h3>
-<input type="checkbox" name="device_options" value="Kompressori" data-price="10" onchange="laskeHinta()">
+         <p class="laite-info">
+          Ilmakompressori
+          Malli: Stanley
+        </p>
+
 </div>
-</div>
+</label>
 
  <!-- Lisää myöhemmin...
 <div class="laite">
@@ -314,7 +331,7 @@ Tiedustelut, lyhyemmät/pidemmät vuokraukset ja muut palautus-/luovutusajat: vu
   <h2>Noutopaikka – Karjalohja</h2>
 
   <p style="text-align:center; font-size:14px;">
-    Ajoneuvo sijaitsee osoitteessa:<br>
+    Laitteet sijaitsevat osoitteessa:<br>
     Sakkolan Kylätie 424, 09120 Karjalohja
   </p>
 
