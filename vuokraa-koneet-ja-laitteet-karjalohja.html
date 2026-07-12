@@ -360,7 +360,7 @@ Pieni paikallinen toimija Karjalohjalla. Tavoitteena on tarjota helposti saatavi
 <div class="card">
 <h2>Tee varaus</h2>
 
-<form action="https://formspree.io/f/xykveewp" method="POST" onsubmit="laskeHinta()">
+<form action="https://formspree.io/f/xykveewp" method="POST" onsubmit="return ennenLahetysta()">
 
 <label for="name">Nimi*</label>
 <input type="text" id="name" name="name" required>
@@ -523,9 +523,9 @@ Henkilötietoja säilytetään myös Formspree-palvelussa, joka toimii kolmannen
 </div>
 
 
+
 <script>
 function laskeHinta() {
-
   const alkuPvm = document.getElementById("start").value;
   const loppuPvm = document.getElementById("end").value;
   const alkuAika = document.getElementById("start_time").value;
@@ -533,15 +533,23 @@ function laskeHinta() {
 
   const selected = document.querySelectorAll('.laite input:checked');
 
-  if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) return;
+  if (!alkuPvm || !loppuPvm || !alkuAika || !loppuAika) {
+    document.getElementById("days").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("devices").value = "";
+    document.getElementById("tulos").innerText = "";
+    return;
+  }
 
   const alku = new Date(alkuPvm + "T" + alkuAika);
   const loppu = new Date(loppuPvm + "T" + loppuAika);
-
   const ero = loppu - alku;
 
   if (ero <= 0) {
     document.getElementById("tulos").innerText = "Tarkista päivät ja kellonajat";
+    document.getElementById("days").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("devices").value = "";
     return;
   }
 
@@ -555,20 +563,50 @@ function laskeHinta() {
     lista.push(cb.value);
   });
 
-  document.getElementById("devices").value = lista.join(", ");
-  document.getElementById("price").value = summa;
-
   if (lista.length === 0) {
     document.getElementById("tulos").innerText = "Valitse vähintään yksi laite";
+    document.getElementById("days").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("devices").value = "";
     return;
   }
+
+  document.getElementById("days").value = days;
+  document.getElementById("devices").value = lista.join(", ");
+  document.getElementById("price").value = summa;
 
   document.getElementById("tulos").innerHTML =
     "Valitut: " + lista.join(", ") + "<br>" +
     "Vuokra-aika: " + days + " päivää<br>" +
     "<strong>Hinta: " + summa + " €</strong>";
 }
+
+function ennenLahetysta() {
+  laskeHinta();
+
+  const devices = document.getElementById("devices").value;
+  const price = document.getElementById("price").value;
+  const days = document.getElementById("days").value;
+
+  if (!devices) {
+    alert("Valitse vähintään yksi laite");
+    return false;
+  }
+
+  if (!days || Number(days) <= 0) {
+    alert("Vuokra-aikaa ei ole laskettu oikein");
+    return false;
+  }
+
+  if (!price || Number(price) <= 0) {
+    alert("Hinta ei ole laskettu oikein");
+    return false;
+  }
+
+  return true;
+}
 </script>
+
 
     <!-- GoatCounter kävijälaskuri (anonyymi, ei evästeitä) -->
   <script data-goatcounter="https://broafix.goatcounter.com/count"
