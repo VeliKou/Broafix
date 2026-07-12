@@ -385,10 +385,16 @@ Pieni paikallinen toimija Karjalohjalla. Tavoitteena on tarjota helposti saatavi
 
 <label>Palautusaika (9–16)*</label>
 <input type="time" id="end_time" name="end_time" min="09:00" max="16:00" value="15:00" required onchange="laskeHinta()">
-
   
 <div class="result" id="tulos"></div>
 
+        <label for="message">Lisätiedot</label>
+        <textarea id="message" name="message" placeholder="Lisätiedot..."></textarea>
+
+         <input type="hidden" name="_subject" value="Uusi varauspyyntö - Laitevuokra Karjalohja">
+
+      <input type="hidden" id="days" name="days">
+  
 <input type="hidden" name="devices" id="devices">
 <input type="hidden" name="price" id="price">
 
