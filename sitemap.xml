@@ -3,7 +3,7 @@
 
   <!-- Etusivu -->
   <url>
-    <loc>https://broafix.com/</loc>
+    <loc>https://www.broafix.com/</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Vuokraa henkilöauto -->
   <url>
-    <loc>https://broafix.com/vuokraa-henkiloauto-kuopio.html</loc>
+    <loc>https://www.broafix.com/vuokraa-henkiloauto-kuopio.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
 
   <!-- Vuokraa pakettiauto -->
   <url>
-    <loc>https://broafix.com/vuokraa-pakettiauto-karjalohja.html</loc>
+    <loc>https://www.broafix.com/vuokraa-pakettiauto-karjalohja.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -27,7 +27,7 @@
 
   <!-- Karjalohja sivu -->
   <url>
-    <loc>https://broafix.com/karjalohja.html</loc>
+    <loc>https://www.broafix.com/karjalohja.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -35,7 +35,7 @@
 
   <!-- Kuopio sivu -->
   <url>
-    <loc>https://broafix.com/kuopio.html</loc>
+    <loc>https://www.broafix.com/kuopio.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -43,7 +43,7 @@
 
     <!-- Karjalohja peräkärry -->
   <url>
-    <loc>https://broafix.com/vuokraa-perakarry-karjalohja.html</loc>
+    <loc>https://www.broafix.com/vuokraa-perakarry-karjalohja.html</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -51,7 +51,7 @@
 
       <!-- Karjalohja koneet ja laitteet -->
   <url>
-    <loc>https://broafix.com/vuokraa-koneet-ja-laitteet-karjalohja.html</loc>
+    <loc>https://www.broafix.com/vuokraa-koneet-ja-laitteet-karjalohja.html</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
