@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://broafix.com/sitemap.xml
+Sitemap: https://www.broafix.com/sitemap.xml
