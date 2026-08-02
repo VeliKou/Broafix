@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Liikkuva autohuolto Karjalohja | Kevyet huollot ja korjaukset | Broafix</title>
+
+  <meta name="description" content="Liikkuva autohuolto Karjalohjalla ja lähialueilla. Kevyet huollot ja korjaukset asiakkaan luona. Erikoisosaamisena diesel, Toyota- ja VAG-konsernin autot." />
+
+  <meta name="robots" content="index, follow" />
+
+  https://www.broafix.com/liikkuva-autohuolto-karjalohja.html
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Liikkuva autohuolto Karjalohja - Broafix" />
+  <meta property="og:description" content="Kevyet autohuollot ja korjaukset asiakkaan luona Karjalohjalla ja lähialueilla. Toyota- ja VAG-osaamista vanhempiin autoihin." />
+  <meta property="og:image" content="https://www.broafix.com/Broafix_logo2.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.broafix.com/liikkuva-autohuolto-karjalohja.html" />
+  <meta property="og:locale" content="fi_FI" />
+
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Structured data: AutoRepair -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Broafix Oy - liikkuva autohuolto",
+    "image": "https://www.broafix.com/Broafix_logo2.jpg",
+    "url": "https://www.broafix.com/liikkuva-autohuolto-karjalohja.html",
+    "description": "Liikkuva autohuoltopalvelu Karjalohjalla ja lähialueilla. Kevyet huollot ja korjaukset asiakkaan luona. Erikoisosaamisena vanhemmat Toyota- ja VAG-konsernin autot.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sakkolan Kylätie 424",
+      "addressLocality": "Karjalohja",
+      "postalCode": "09120",
+      "addressCountry": "FI"
+    },
+    "areaServed": [
+      {
+        "@type": "Place",
+        "name": "Karjalohja"
+      },
+      {
+        "@type": "Place",
+        "name": "Lohja"
+      },
+      {
+        "@type": "Place",
+        "name": "Lähialueet"
+      }
+    ],
+    "brand": {
+      "@type": "Brand",
+      "name": "Broafix"
+    },
+    "priceRange": "€€"
+  }
+  </script>
+
+  <!-- Structured data: Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Liikkuva autohuolto Karjalohja",
+    "serviceType": "Autohuolto ja kevyt autokorjaus",
+    "provider": {
+      "@type": "Organization",
+      "name": "Broafix Oy",
+      "url": "https://www.broafix.com"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Karjalohja ja lähialueet"
+    },
+    "description": "Kevyet autohuollot ja korjaukset asiakkaan luona. Palvelu sopii erityisesti vanhemmille Toyota- ja VAG-konsernin autoille."
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --card: #ffffff;
+      --text: #222;
+      --muted: #555;
+      --border: #dddddd;
+      --green: #2c7a2c;
+      --green-dark: #256b25;
+      --blue: #2563eb;
+      --blue-dark: #1e40af;
+      --orange: #f97316;
+      --orange-dark: #c2410c;
+      --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      --radius: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 24px 20px 40px;
+    }
+
+    h1,
+    h2 {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-top: 8px;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h3 {
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    p {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 420px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 22px;
+      margin-bottom: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .company-id,
+    .footer-company {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .company-id {
+      margin: 0 0 18px 0;
+    }
+
+    .footer-company {
+      margin-top: 10px;
+    }
+
+    .price {
+      font-size: 26px;
+      font-weight: bold;
+      color: var(--green);
+      margin: 0 0 10px 0;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1 1 320px;
+    }
+
+    .hero-subtext {
+      font-size: 15px;
+      color: #333;
+    }
+
+    .hero-image {
+      flex: 0 0 180px;
+      text-align: right;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 170px;
+      height: auto;
+      border-radius: 10px;
+      display: block;
+      margin-left: auto;
+      box-shadow: var(--shadow);
+      background: #ffffff;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .service-box {
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+      background: #fafafa;
+    }
+
+    .service-box strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #111827;
+    }
+
+    .notice {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 14px;
+      color: #7c2d12;
+      margin-top: 14px;
+    }
+
+    .booking-box {
+      text-align: center;
+    }
+
+    .booking-button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 14px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .booking-button:hover {
+      background: var(--green-dark);
+    }
+
+    .secondary-button {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 11px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .secondary-button:hover {
+      background: var(--blue-dark);
+    }
+
+    .top-buttons {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .top-button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+      font-size: 14px;
+    }
+
+    .top-button:hover {
+      background: var(--green-dark);
+    }
+
+    .muted {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.5;
+      margin-top: 16px;
+    }
+
+    .faq h3 {
+      font-size: 16px;
+      margin-top: 18px;
+    }
+
+    .faq p {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .small-print {
+      font-size: 12px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 640px) {
+      .top-buttons {
+        left: 15px;
+        right: 15px;
+        justify-content: space-between;
+      }
+
+      .top-button {
+        font-size: 13px;
+        padding: 9px 12px;
+      }
+
+      .container {
+        padding-top: 78px;
+      }
+
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-text {
+        text-align: center;
+      }
+
+      .hero-image {
+        text-align: center;
+      }
+
+      .hero-image img {
+        margin: 0 auto;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 21px;
+      }
+
+      iframe {
+        height: 360px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-buttons">
+    <a href="index.html" class="top-button">🏠 Etusivulle</a>
+    <a href="karjalohja.html" class="top-button">← Edellinen sivu</a>
+  </div>
+
+  <div class="container">
+
+    <h1>Liikkuva autohuolto Karjalohja</h1>
+    <p class="company-id">Broafix Oy · Y:3579719-5</p>
+
+    <div class="card hero">
+      <div class="hero-text">
+        <p class="price">Kevyet huollot ja korjaukset asiakkaan luona</p>
+
+        <div class="hero-subtext">
+          <p>
+            Broafix tarjoaa liikkuvaa autohuoltopalvelua Karjalohjalla ja lähialueilla.
+          </p>
+
+          <p>
+            Teemme kevyitä huoltoja ja korjauksia asiakkaan luona, esimerkiksi kotipihassa,
+            työpaikan pihalla tai erikseen sovitussa paikassa.
+          </p>
+
+          <p>
+            Erikoisosaamisena ovat diesel, vanhemmat autot, erityisesti Toyota sekä VAG-konsernin autot:
+            Volkswagen, Audi, Seat ja Skoda.
+          </p>
+
+          <p>
+            Palvelu sopii silloin, kun auto tarvitsee perushuoltoa, tarkastusta tai pientä korjausta,
+            mutta korjaamolle vieminen ei ole käytännöllistä.
+          </p>
+          
+          <p>
+
+            🔧 Autohuoltoa Karjalohjalla – luotettavasti, joustavasti ja edullisesti 
+
+Kevyet korjaukset ja huollot VAG-autoihin (VW, Skoda, Seat, Audi) 
+Erikoistuminen malleihin, joihin löytyy yleisimmät huolto- ja jarruosat omasta hyllystä. 
+
+Olen Veli Koukkula, Karjalohjalainen yrittäjä ja sähköalan ammattilainen. Teen toimistotyön vastapainoksi autonhuoltotöitä paikallisille asiakkaille kilpailukykyiseen hintaan. Olen korjannut autoja nuoresta asti, ja vuosien kokemus omien autojen huolloista näkyy varmana ja huolellisena työnä. 
+
+Toimin liikkuvana autohuoltona – tulen paikan päälle autosi luokse Karjalohjan ja Sammatin alueella. Asun itse Karjalohjan ja Sammatin välisessä metsässä. 
+
+ 
+
+🚗 Erikoistuminen – Huollan ja korjaan erityisesti seuraavia malleja: 
+
+VW / Skoda / Seat / Audi 
+
+Diesel (2008–2015): 
+
+    1.6 TDI 
+
+    2.0 TDI 
+
+Bensa (2008–2012): 
+
+    1.2 TSI 
+
+    1.4 TSI 
+
+Näihin malleihin löytyy yleensä valmiina: 
+ ✔ öljyn- ja ilmansuodattimet 
+ ✔ raitisilmasuodattimet 
+ ✔ jarrupalat ja liukutapit 
+
+ 
+
+🛠 Palvelut / hinnasto 
+
+Perusmaksu 10€  
+
+Perushuollot 
+
+    Öljynvaihto, 10+30+20= 70€, (sis.öljyt max 5l, suodatin, vaihtotyö imemällä yläkautta) 
+
+    ilmansuodattimien vaihdot, moottorin ilmansuodatin=20€, sisätilan aktiivihiilisuodatin 10€ 
+
+    polttimoiden vaihdot, ajovalot 20€ tehokkaat, perus 10€, rekisterikilven ja parkkivalot 5€kpl.  
+
+    tuulilasin pyyhkijöiden vaihdot 20€ 
+
+Muut palvelut 
+
+    DPF-/hiukkassuodattimen puhdistus, 100€ (puhdistus tapahtuu ilman DPF laitteiston irroitusta, Puhdistusaine anturin kautta sisään, polton pakotus ohjelmallisesti ja auton ajaminen lämpimäksi. Tarvittaessa uusitaan kunnes puhdistus onnistunut. aika Yht. N. 1-2h) 
+
+    vikakoodien luku ja nollaus, 30€ 
+
+    akun testaus, 10€ 
+
+    Akun vaihto, Akun hinta vaihtelee paljon riippuen mallista. 140-250€ + Työ 20€ 
+
+    Renkaiden kunnon tarkastus ja ilmantäyttö, 10€ 
+
+    Kysy muita töitä ja muiden automallien korjauksia viestillä.  
+
+ 
+
+🤝 Miksi valita minut?, poista tämäkin kohta? 
+
+⭐ Paikallinen ja joustava palvelu 
+ ⭐ Reilu hinnoittelu 
+ ⭐ Laadukas, rauhallinen ja huolellinen työnjälki 
+ ⭐ Selkeä toimintatapa – ei yllätyskuluja 
+
+Olen toipumassa terveyshaasteista ja teen töitä omaan rauhalliseen tahtiini. Se tarkoittaa asiakkaalle huolellista, tarkkaa ja rehellistä palvelua ilman kiirettä. 
+
+🎓 Haluatko oppia autohuoltoa? 
+
+Opastan mielelläni työn ohessa – olit sitten itse kiinnostunut tai haluat nuorelle käytännön oppia autojen huollosta. 
+
+ 
+
+Työstä saa aina kuitin erittelyineen. Paperiseen huoltokirjaan saa merkinnän. Vastuuvakuutus autohuolto töihin on voimassa. Takuu työlle ja osille lainmukainen 6kk. Y tunnus: xxx 
+
+ 
+
+Parhaiten minuun saa yhteyttä sähköpostitse: veli.koukkula@broafix.com 
+
+Viesti tai soitto: Puh. Prepaid? 
+
+Maksu: mobilepay, käteinen tai tilisiirto, korttimaksu ei valitettavasti ole mahdollinen. 
+
+ 
+
+Selvitettävää: Kuitin tulostus? Käsinkirjoitettu kuitti vai tulostin mukana? 
+
+Alkuun omatekemä kuittipohja, tavallinen paperi johon kirjoitetaan käsin korjaustyöt (tai kuittipohjassa on valmiina korjaustyöt) ja kuitti annetaan asiakkaalle, ja itselle kuva kuitista.  
+
+Lasku ja kuitti tulee olemaan sama dokumentti. Varmista tarvittavat tiedot siihen. 
+
+ 
+            
+          </p>
+
+          
+        </div>
+      </div>
+
+      <div class="hero-image">
+        Broafix_logo2.jpg
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Mitä palvelu sisältää?</h2>
+
+      <p style="text-align:center; font-size:15px;">
+        Liikkuva autohuolto on tarkoitettu kevyisiin huoltoihin, tarkastuksiin ja pieniin korjaustöihin.
+      </p>
+
+      <div class="service-grid">
+        <div class="service-box">
+          <strong>Öljynvaihdot</strong>
+          Moottoriöljyn ja öljynsuodattimen vaihto tapauskohtaisesti asiakkaan luona.
+        </div>
+
+        <div class="service-box">
+          <strong>Suodattimien vaihdot</strong>
+          Ilmansuodatin, raitisilmasuodatin ja muut helpommin vaihdettavat huolto-osat.
+        </div>
+
+        <div class="service-box">
+          <strong>Jarruhuollot</strong>
+          Jarrupalojen, jarrulevyjen ja jarrujen kunnon tarkastus tapauskohtaisesti.
+        </div>
+
+        <div class="service-box">
+          <strong>Akun vaihto</strong>
+          Akun tarkastus ja vaihto silloin, kun työ on mahdollista tehdä turvallisesti paikan päällä.
+        </div>
+
+        <div class="service-box">
+          <strong>Vikakoodien luku</strong>
+          Vikakoodien lukeminen ja alustava arvio vian mahdollisesta syystä.
+        </div>
+
+        <div class="service-box">
+          <strong>Pienet korjaukset</strong>
+          Pienet sähköviat, valot, pyyhkijät, lukot, letkut, kiinnitykset ja muut tapauskohtaiset työt.
+        </div>
+      </div>
+
+      <div class="notice">
+        <strong>Huom:</strong> Kaikki työt eivät sovellu tehtäväksi asiakkaan pihassa. Jos työ vaatii nosturia,
+        erikoistyökaluja, laajaa purkamista tai korjaamoympäristöä, arvioimme tilanteen erikseen.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Erikoisosaaminen</h2>
+
+      <p>
+        Broafix on erityisen kiinnostunut vanhemmista ja käyttöikää nähneistä autoista. Moni vanhempi auto
+        on edelleen hyvin pidettävissä liikenteessä, kun huollot tehdään järkevästi ja viat korjataan ajoissa.
+      </p>
+
+      <h3>Toyota</h3>
+      <p>
+        Teemme kevyitä huoltoja ja korjauksia vanhempiin Toyota-malleihin tapauskohtaisesti.
+        Toyota on usein luotettava käyttöauto, jonka käyttöikää voidaan jatkaa säännöllisellä huollolla.
+      </p>
+
+      <h3>VAG-konsernin autot</h3>
+      <p>
+        Palvelemme myös vanhempia Volkswagen-, Audi-, Seat- ja Skoda-autoja.
+        Tyypillisiä töitä voivat olla esimerkiksi huolto-osien vaihdot, vikakoodien luku,
+        jarruhuollot ja pienet sähkö- tai käyttöviat.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Liikkuva autohuolto Karjalohjalla ja lähialueilla</h2>
+
+      <p>
+        Liikkuva autohuolto säästää aikaa, koska autoa ei tarvitse aina viedä erikseen korjaamolle.
+        Useat kevyet huollot voidaan tehdä asiakkaan luona, kun työtila ja sääolosuhteet sen sallivat.
+      </p>
+
+      <p>
+        Palvelu sopii erityisesti tilanteisiin, joissa auto on ajokuntoinen, mutta tarvitsee huoltoa,
+        tarkastusta tai pientä korjausta. Jos auto ei käynnisty tai siinä on selvä tekninen vika,
+        voimme arvioida tilanteen ja neuvoa jatkotoimet.
+      </p>
+
+      <p>
+        Toimimme ensisijaisesti Karjalohjan alueella. Lähialueiden työt sovitaan erikseen.
+      </p>
+    </div>
+
+    <div class="card booking-box">
+      <h2>Varaa huoltoaika</h2>
+
+      <p>
+        Ajanvaraus tehdään Google Calendarin kautta. Valitse sopiva vapaa aika ja kerro varauksen yhteydessä
+        auton merkki, malli, vuosimalli, rekisterinumero sekä lyhyt kuvaus huoltotarpeesta.
+      </p>
+
+      GOOGLE_CALENDAR_AJANVARAUSLINKKI_TAHAN
+        📅 Varaa huoltoaika Google Calendarissa
+      </a>
+
+      <p class="muted">
+        Varaus vahvistuu Google Calendarin kautta. Jos sopivaa aikaa ei löydy, voit olla yhteydessä
+        sähköpostilla tai puhelimitse.
+      </p>
+
+      <p class="small-print">
+        Vaihda yllä olevan painikkeen href-kohtaan oma Google Calendar Appointment Schedule -linkkisi.
+      </p>
+    </div>
+
+    <!-- Jos haluat näyttää julkisen Google-kalenterin, poista kommenttimerkit tästä kohdasta ja vaihda src-linkki omaan kalenteriin.
+
+    <div class="card">
+      <h2>Vapaat ajat</h2>
+
+      <p style="text-align:center; font-size:14px;">
+        ✅ Tyhjät ajat = mahdollisesti varattavissa<br>
+        ❌ Varattu = ei saatavilla
+      </p>
+
+      <iframe
+        src="GOOGLE_CALENDAR_EMBED_LINKKI_TAHAN"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+    </div>
+
+    -->
+
+    <div class="card">
+      <h2>Toiminta-alue</h2>
+
+      <p style="text-align:center; font-size:14px;">
+        Palvelun lähtöalue: Karjalohja<br>
+        Osoite: Sakkolan Kylätie 424, 09120 Karjalohja
+      </p>
+
+      <iframe
+        src="https://www.google.com/maps?q=Sakkolan%20Kylätie%20424%2009120%20Karjalohja&output=embed"
+        loading="lazy">
+      </iframe>
+
+      <div style="text-align:center; margin-top:10px;">
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Sakkolan+Kylätie+424+Karjalohja"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="secondary-button">
+          Avaa Google Mapsissa
+        </a>
+      </div>
+    </div>
+
+    <div class="card faq">
+      <h2>Usein kysyttyä liikkuvasta autohuollosta</h2>
+
+      <h3>Mitä liikkuva autohuolto tarkoittaa?</h3>
+      <p>
+        Liikkuva autohuolto tarkoittaa, että huolto tai kevyt korjaus tehdään asiakkaan luona
+        sen sijaan, että auto vietäisiin korjaamolle.
+      </p>
+
+      <h3>Mitä töitä voidaan tehdä asiakkaan pihassa?</h3>
+      <p>
+        Tyypillisiä töitä ovat öljynvaihdot, suodattimien vaihdot, akun vaihto, vikakoodien luku,
+        jarrujen tarkastus ja pienet korjaukset. Työn soveltuvuus arvioidaan aina tapauskohtaisesti.
+      </p>
+
+      <h3>Huollatteko kaikkia autoja?</h3>
+      <p>
+        Palvelu painottuu vanhempiin käyttöautoihin. Erityisosaamista on Toyota- sekä VAG-konsernin autoista,
+        kuten Volkswagen, Audi, Seat ja Skoda.
+      </p>
+
+      <h3>Voiko huoltoa tehdä talvella?</h3>
+      <p>
+        Kevyitä töitä voidaan tehdä myös talvella, jos työolosuhteet ovat turvalliset ja työ onnistuu
+        ilman korjaamotiloja. Kovalla pakkasella tai huonossa säässä aika voidaan sopia uudelleen.
+      </p>
+
+      <h3>Voiko vian selvittää paikan päällä?</h3>
+      <p>
+        Monissa tapauksissa voidaan lukea vikakoodit ja tehdä alustava arvio. Kaikkia vikoja ei kuitenkaan
+        voida korjata paikan päällä ilman korjaamovarustusta.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Tärkeitä tietoja</h2>
+
+      <ul>
+        <li>Työ sovitaan aina tapauskohtaisesti.</li>
+        <li>Asiakas vastaa siitä, että autolle on turvallinen työskentelypaikka.</li>
+        <li>Tarvittavat osat sovitaan ennen työn aloittamista.</li>
+        <li>Kaikkia korjauksia ei voida tehdä liikkuvana palveluna.</li>
+        <li>Laskutus ja maksutapa sovitaan varauksen yhteydessä.</li>
+      </ul>
+
+      <p class="muted">
+        Kun varaat ajan, ilmoita auton merkki, malli, vuosimalli, moottori, rekisterinumero ja mahdollisimman
+        tarkka kuvaus viasta tai huoltotarpeesta. Tämä nopeuttaa työn arviointia.
+      </p>
+    </div>
+
+    <p class="footer-company">
+      © 2026 Broafix Oy · Y:3579719-5
+    </p>
+
+  </div>
+
+  <!-- GoatCounter kävijälaskuri (anonyymi, ei evästeitä) -->
+  //gc.zgo.at/count.jsscript>
+
+</body>
+</html>
